@@ -1,0 +1,14 @@
+/* Shared page hero styles */
+.page-hero {
+  padding-top: calc(var(--nav-height) + 80px);
+  padding-bottom: 80px;
+  background: radial-gradient(ellipse at 20% 50%, rgba(242,195,69,0.04) 0%, transparent 60%), var(--surface);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding-top: calc(var(--nav-height) + 48px);
+    padding-bottom: 48px;
+  }
+}

@@ -1,0 +1,12 @@
+/* Footer responsive */
+@media (max-width: 900px) {
+  footer .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 560px) {
+  footer .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

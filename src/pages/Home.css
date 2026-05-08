@@ -1,0 +1,187 @@
+/* Home Page Styles */
+
+/* ── Hero ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+  background: radial-gradient(ellipse at 30% 20%, rgba(242,195,69,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 80%, rgba(192,198,219,0.03) 0%, transparent 50%),
+              var(--surface);
+}
+
+.hero-content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  margin-bottom: 28px;
+}
+
+.hero-headline {
+  max-width: 700px;
+  margin-bottom: 24px;
+  color: var(--on-surface);
+  opacity: 0;
+}
+
+.gold-text {
+  color: var(--primary);
+  font-style: italic;
+}
+
+.hero-subtext {
+  max-width: 540px;
+  color: var(--on-surface-variant);
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+  opacity: 0;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 0;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  background: var(--surface-container-low);
+  overflow: hidden;
+  width: fit-content;
+  opacity: 0;
+}
+
+.hero-stat {
+  padding: 28px 36px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+
+.hero-stat:last-child {
+  border-right: none;
+}
+
+@media (max-width: 900px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .hero-stat:nth-child(2) { border-right: none; }
+  .hero-stat:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.07); border-top: 1px solid rgba(255,255,255,0.07); }
+  .hero-stat:nth-child(4) { border-right: none; border-top: 1px solid rgba(255,255,255,0.07); }
+}
+
+@media (max-width: 560px) {
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Services ── */
+.services-grid {
+  gap: 24px;
+}
+
+.service-card {
+  cursor: default;
+}
+
+.service-icon {
+  font-size: 36px !important;
+  color: var(--primary);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: gap 0.2s;
+}
+
+.service-link:hover {
+  gap: 10px;
+}
+
+/* ── Philosophy Banner ── */
+.philosophy-banner {
+  background: linear-gradient(135deg, var(--surface-container-low) 0%, var(--surface-container) 100%);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 64px 0;
+  text-align: center;
+}
+
+.philosophy-quote {
+  font-family: 'Noto Serif', Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-style: italic;
+  color: var(--on-surface);
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.philosophy-attr {
+  color: var(--primary);
+}
+
+/* ── Why VPW ── */
+.why-vpw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.why-vpw-right {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.why-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.why-icon {
+  color: var(--primary);
+  font-size: 24px !important;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .why-vpw-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ── CTA Banner ── */
+.cta-banner {
+  background: linear-gradient(135deg, var(--surface-container-low), var(--surface-container));
+  border-top: 1px solid rgba(242,195,69,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding: 72px 0;
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}

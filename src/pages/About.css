@@ -1,0 +1,18 @@
+/* About page responsive grids */
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .about-story-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-vm-grid { grid-template-columns: 1fr; }
+}
