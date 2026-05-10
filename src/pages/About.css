@@ -3,16 +3,21 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
 }
 
 .about-vm-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 48px;
+}
+
+@media (max-width: 1024px) {
+  .about-story-grid { gap: 48px; }
+  .about-vm-grid { gap: 36px; }
 }
 
 @media (max-width: 900px) {
   .about-story-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-vm-grid { grid-template-columns: 1fr; }
+  .about-vm-grid { grid-template-columns: 1fr; gap: 48px; }
 }

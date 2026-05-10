@@ -107,13 +107,13 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="hero" aria-label="Hero">
         {/* ambient glows */}
-        <div className="hero-glow" style={{ width: 600, height: 600, background: 'radial-gradient(circle, rgba(242,195,69,0.07) 0%, transparent 70%)', top: '-100px', left: '-100px' }} />
-        <div className="hero-glow" style={{ width: 400, height: 400, background: 'radial-gradient(circle, rgba(191,201,220,0.05) 0%, transparent 70%)', bottom: '0', right: '0' }} />
+        <div className="hero-glow absolute w-[600px] h-[600px] [background:radial-gradient(circle,rgba(242,195,69,0.07)_0%,transparent_70%)] -top-[100px] -left-[100px]" />
+        <div className="hero-glow absolute w-[400px] h-[400px] [background:radial-gradient(circle,rgba(191,201,220,0.05)_0%,transparent_70%)] bottom-0 right-0" />
 
         <div className="container hero-content">
           <div className="hero-badge animate-fade-up">
             <span className="chip">
-              <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#4ade80', flexShrink: 0 }} />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#4ade80] shrink-0" />
               SEBI Registered Investment Adviser
             </span>
           </div>
@@ -136,7 +136,7 @@ export default function Home() {
               id="hero-start-investing-btn"
             >
               Start Investing via WhatsApp
-              <span className="material-icons" style={{ fontSize: 18 }}>arrow_forward</span>
+              <span className="material-icons text-[18px]">arrow_forward</span>
             </a>
             <Link to="/methodology" className="btn-ghost" id="hero-methodology-btn">
               Our Methodology
@@ -159,7 +159,7 @@ export default function Home() {
       <section className="section" aria-labelledby="services-heading">
         <div className="container">
           <div className="section-label label-sm">Our Services</div>
-          <h2 id="services-heading" className="headline-lg" style={{ maxWidth: 560, marginBottom: 48 }}>
+          <h2 id="services-heading" className="headline-lg max-w-xl mb-20">
             Bespoke investment vehicles,<br />managed with institutional rigor.
           </h2>
 
@@ -167,17 +167,17 @@ export default function Home() {
             {SERVICES.map(({ icon, title, desc, link, linkText, external }) => (
               <div key={title} className="card service-card">
                 <span className="material-icons service-icon" aria-hidden="true">{icon}</span>
-                <h3 className="headline-md" style={{ marginBottom: 12 }}>{title}</h3>
-                <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 24 }}>{desc}</p>
+                <h3 className="headline-md mb-3">{title}</h3>
+                <p className="body-md [color:var(--on-surface-variant)] mb-6">{desc}</p>
                 {external ? (
                   <a href={link} target="_blank" rel="noopener noreferrer" className="service-link">
                     {linkText}
-                    <span className="material-icons" style={{ fontSize: 16 }}>arrow_forward</span>
+                    <span className="material-icons text-base">arrow_forward</span>
                   </a>
                 ) : (
                   <Link to={link} className="service-link">
                     {linkText}
-                    <span className="material-icons" style={{ fontSize: 16 }}>arrow_forward</span>
+                    <span className="material-icons text-base">arrow_forward</span>
                   </Link>
                 )}
               </div>
@@ -202,15 +202,15 @@ export default function Home() {
           <div className="why-vpw-grid">
             <div className="why-vpw-left">
               <div className="section-label label-sm">Why VPW</div>
-              <h2 id="why-vpw-heading" className="headline-lg" style={{ marginBottom: 24 }}>
+              <h2 id="why-vpw-heading" className="headline-lg mb-6">
                 A disciplined edge in an<br />undisciplined market.
               </h2>
-              <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 32 }}>
+              <p className="body-md [color:var(--on-surface-variant)] mb-12">
                 We combine the rigor of institutional quantitative research with the agility of a client-first advisory. Our approach is built on transparent processes, low-cost execution, and the relentless pursuit of risk-adjusted returns.
               </p>
-              <Link to="/about" className="btn-ghost" id="home-about-btn">
+              <Link to="/about" className="btn-ghost mt-8" id="home-about-btn">
                 About VPW Wealth
-                <span className="material-icons" style={{ fontSize: 16 }}>arrow_forward</span>
+                <span className="material-icons text-base">arrow_forward</span>
               </Link>
             </div>
             <div className="why-vpw-right">
@@ -223,8 +223,8 @@ export default function Home() {
                 <div key={title} className="why-item">
                   <span className="material-icons why-icon" aria-hidden="true">{icon}</span>
                   <div>
-                    <div style={{ fontWeight: 600, marginBottom: 4 }}>{title}</div>
-                    <p style={{ color: 'var(--on-surface-variant)', fontSize: '0.9rem' }}>{desc}</p>
+                    <div className="font-semibold mb-1">{title}</div>
+                    <p className="[color:var(--on-surface-variant)] text-[0.9rem]">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -234,18 +234,18 @@ export default function Home() {
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="section" aria-labelledby="testimonials-heading" style={{ background: 'var(--surface-container-lowest)' }}>
+      <section className="section [background:var(--surface-container-lowest)]" aria-labelledby="testimonials-heading">
         <div className="container">
           <div className="section-label label-sm">Client Stories</div>
-          <h2 id="testimonials-heading" className="headline-lg" style={{ marginBottom: 48 }}>
+          <h2 id="testimonials-heading" className="headline-lg mb-20">
             Trusted by industry leaders.
           </h2>
           <div className="grid-3">
             {TESTIMONIALS.map(({ quote, name, role }) => (
               <div key={name} className="testimonial-card">
-                <span className="material-icons" style={{ color: 'var(--primary)', marginBottom: 16, fontSize: 28 }}>format_quote</span>
+                <span className="material-icons [color:var(--primary)] mb-4 text-[28px] block">format_quote</span>
                 <p className="testimonial-quote">{quote}</p>
-                <div className="gold-line" style={{ marginBottom: 16 }} />
+                <div className="gold-line mb-4" />
                 <div className="testimonial-author-name">{name}</div>
                 <div className="testimonial-author-role">{role}</div>
               </div>
@@ -258,18 +258,18 @@ export default function Home() {
       <section className="section" id="faqs" aria-labelledby="faqs-heading">
         <div className="container">
           <div className="section-label label-sm">FAQs</div>
-          <h2 id="faqs-heading" className="headline-lg" style={{ marginBottom: 48 }}>
+          <h2 id="faqs-heading" className="headline-lg mb-16">
             Frequently asked questions.
           </h2>
-          <div style={{ maxWidth: 760 }}>
+          <div className="max-w-[760px]">
             {FAQS.map(({ q, a }) => (
               <FAQ key={q} q={q} a={a} />
             ))}
           </div>
-          <div style={{ marginTop: 40 }}>
-            <Link to="/contact" className="btn-ghost" id="faq-contact-btn">
+          <div className="mt-10">
+            <Link to="/contact" className="btn-ghost mt-8" id="faq-contact-btn">
               Still have questions? Contact us
-              <span className="material-icons" style={{ fontSize: 16 }}>arrow_forward</span>
+              <span className="material-icons text-base">arrow_forward</span>
             </Link>
           </div>
         </div>
@@ -279,10 +279,10 @@ export default function Home() {
       <section className="cta-banner" aria-label="Call to action">
         <div className="container cta-inner">
           <div>
-            <h2 className="headline-lg" style={{ marginBottom: 12 }}>Ready to build your wealth?</h2>
-            <p style={{ color: 'var(--on-surface-variant)' }}>Start investing in minutes via WhatsApp. No branch visits required.</p>
+            <h2 className="headline-lg mb-3">Ready to build your wealth?</h2>
+            <p className="[color:var(--on-surface-variant)]">Start investing in minutes via WhatsApp. No branch visits required.</p>
           </div>
-          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <div className="flex gap-4 flex-wrap">
             <a
               href="https://wa.me/919999999999"
               target="_blank"

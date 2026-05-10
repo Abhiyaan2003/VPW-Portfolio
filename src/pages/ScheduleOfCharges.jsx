@@ -48,17 +48,17 @@ const NOTES = [
 
 export default function ScheduleOfCharges() {
   return (
-    <div className="page-enter" style={{ paddingTop: 'var(--nav-height)' }}>
+    <div className="page-enter pt-[var(--nav-height)]">
       {/* ── Page Hero ── */}
       <section className="page-hero" aria-label="Schedule of Charges">
         <div className="container">
           <div className="section-label label-sm">Schedule of Charges</div>
-          <h1 className="display-xl" style={{ maxWidth: 640, marginBottom: 24 }}>
+          <h1 className="display-xl max-w-[640px] mb-6">
             Complete{' '}
-            <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>fee transparency.</span>
+            <span className="[color:var(--primary)] italic">fee transparency.</span>
             {' '}No surprises.
           </h1>
-          <p className="body-lg" style={{ maxWidth: 560, color: 'var(--on-surface-variant)' }}>
+          <p className="body-lg max-w-[560px] [color:var(--on-surface-variant)] mb-12">
             We believe complete fee transparency is the foundation of a trusted advisory relationship. Below is a comprehensive breakdown of all our charges across every service we offer.
           </p>
         </div>
@@ -67,16 +67,16 @@ export default function ScheduleOfCharges() {
       {/* ── Key Highlights ── */}
       <section className="section" aria-label="Fee highlights">
         <div className="container">
-          <div className="grid-3" style={{ gap: 20, marginBottom: 0 }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-0">
             {[
               { icon: 'money_off', title: 'Zero Commission Model', desc: 'We never receive commissions from fund houses. Our only income is the advisory fee you pay us — aligning our interests perfectly with yours.' },
               { icon: 'receipt_long', title: 'GST Invoiced', desc: 'All fees are subject to 18% GST as per applicable regulations. Proper tax invoices are issued for all advisory fees.' },
               { icon: 'notifications_active', title: '30-Day Change Notice', desc: 'Any fee revision requires a minimum 30-day written notice to clients. Your consent is required for any increase.' },
             ].map(({ icon, title, desc }) => (
-              <div key={title} className="card" style={{ padding: 32 }}>
-                <span className="material-icons" style={{ color: 'var(--primary)', fontSize: 32, marginBottom: 16, display: 'block' }}>{icon}</span>
-                <h3 style={{ fontFamily: 'Noto Serif', fontSize: '1.05rem', marginBottom: 10 }}>{title}</h3>
-                <p style={{ fontSize: '0.88rem', color: 'var(--on-surface-variant)', lineHeight: 1.65 }}>{desc}</p>
+              <div key={title} className="card p-10">
+                <span className="material-icons [color:var(--primary)] text-[36px] mb-6 block">{icon}</span>
+                <h3 className="font-serif text-[1.2rem] mb-3">{title}</h3>
+                <p className="text-[0.95rem] [color:var(--on-surface-variant)] leading-[1.7]">{desc}</p>
               </div>
             ))}
           </div>
@@ -84,14 +84,14 @@ export default function ScheduleOfCharges() {
       </section>
 
       {/* ── Charges Tables ── */}
-      <section className="section" style={{ background: 'var(--surface-container-lowest)', paddingTop: 0 }} aria-label="Detailed charge tables">
+      <section className="section [background:var(--surface-container-lowest)]" aria-label="Detailed charge tables">
         <div className="container">
           {CHARGES_DATA.map(({ category, rows }) => (
-            <div key={category} style={{ marginBottom: 56 }}>
-              <h2 className="headline-md" style={{ marginBottom: 20, paddingBottom: 16, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+            <div key={category} className="mb-24 last:mb-10">
+              <h2 className="headline-md mb-8 pb-4 border-b border-white/[0.08]">
                 {category}
               </h2>
-              <div style={{ overflowX: 'auto', borderRadius: 'var(--radius)', border: '1px solid rgba(255,255,255,0.07)' }}>
+              <div className="overflow-x-auto rounded-[var(--radius)] border border-white/[0.07]">
                 <table className="data-table" id={`charges-table-${category.replace(/\s+/g,'-').toLowerCase()}`}>
                   <thead>
                     <tr>
@@ -105,11 +105,11 @@ export default function ScheduleOfCharges() {
                   <tbody>
                     {rows.map(({ service, frequency, fee, basis, notes }) => (
                       <tr key={service}>
-                        <td style={{ fontWeight: 500 }}>{service}</td>
-                        <td><span className="chip" style={{ fontSize: '0.7rem' }}>{frequency}</span></td>
-                        <td style={{ color: 'var(--primary)', fontWeight: 600, fontFamily: 'Noto Serif' }}>{fee}</td>
-                        <td style={{ color: 'var(--on-surface-variant)', fontSize: '0.85rem' }}>{basis}</td>
-                        <td style={{ color: 'var(--on-surface-variant)', fontSize: '0.82rem', fontStyle: 'italic' }}>{notes}</td>
+                        <td className="font-medium">{service}</td>
+                        <td><span className="chip text-[0.72rem]">{frequency}</span></td>
+                        <td className="[color:var(--primary)] font-semibold font-serif">{fee}</td>
+                        <td className="[color:var(--on-surface-variant)] text-[0.88rem]">{basis}</td>
+                        <td className="[color:var(--on-surface-variant)] text-[0.85rem] italic">{notes}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -119,16 +119,16 @@ export default function ScheduleOfCharges() {
           ))}
 
           {/* Notes */}
-          <div className="card" style={{ borderColor: 'rgba(242,195,69,0.15)' }}>
-            <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', marginBottom: 20 }}>
-              <span className="material-icons" style={{ color: 'var(--primary)', fontSize: 24 }}>info</span>
-              <h3 style={{ fontFamily: 'Noto Serif', fontSize: '1.05rem' }}>Important Notes</h3>
+          <div className="card border-[rgba(242,195,69,0.15)]">
+            <div className="flex gap-4 items-start mb-6">
+              <span className="material-icons [color:var(--primary)] text-[24px] mt-1">info</span>
+              <h3 className="font-serif text-[1.15rem]">Important Notes</h3>
             </div>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, listStyle: 'none' }}>
+            <ul className="flex flex-col gap-4">
               {NOTES.map((note, i) => (
-                <li key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-                  <span style={{ color: 'var(--primary)', fontWeight: 700, flexShrink: 0 }}>{i + 1}.</span>
-                  <span style={{ fontSize: '0.88rem', color: 'var(--on-surface-variant)', lineHeight: 1.65 }}>{note}</span>
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="[color:var(--primary)] font-bold shrink-0">{i + 1}.</span>
+                  <span className="text-[0.9rem] [color:var(--on-surface-variant)] leading-[1.7]">{note}</span>
                 </li>
               ))}
             </ul>
@@ -139,16 +139,16 @@ export default function ScheduleOfCharges() {
       {/* ── Regulatory ── */}
       <section className="section" aria-label="SEBI regulatory information">
         <div className="container">
-          <div style={{ background: 'var(--surface-container-low)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 'var(--radius-lg)', padding: '40px' }}>
-            <span className="material-icons" style={{ color: 'var(--primary)', fontSize: 32, marginBottom: 16, display: 'block' }}>gavel</span>
-            <h2 className="headline-md" style={{ marginBottom: 16 }}>Regulatory Disclosures</h2>
-            <p style={{ color: 'var(--on-surface-variant)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: 16 }}>
+          <div className="[background:var(--surface-container-low)] border border-white/[0.07] rounded-[var(--radius-lg)] p-10">
+            <span className="material-icons [color:var(--primary)] text-[32px] mb-4 block">gavel</span>
+            <h2 className="headline-md mb-4">Regulatory Disclosures</h2>
+            <p className="[color:var(--on-surface-variant)] text-[0.9rem] leading-[1.75] mb-4">
               VPW Wealth Management Pvt. Ltd. is a SEBI Registered Investment Adviser (Registration No. INA000XXXXXX). Our investment advisory services are governed by SEBI (Investment Advisers) Regulations 2013 and amendments thereto.
             </p>
-            <p style={{ color: 'var(--on-surface-variant)', fontSize: '0.9rem', lineHeight: 1.75, marginBottom: 24 }}>
+            <p className="[color:var(--on-surface-variant)] text-[0.9rem] leading-[1.75] mb-6">
               Mutual Fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future results. The NAV of units may go up or down depending on market conditions.
             </p>
-            <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.3)', lineHeight: 1.6 }}>
+            <p className="text-[0.78rem] text-white/30 leading-[1.6]">
               AMFI Registration No: ARN-XXXXXX | BSE STAR MF | NSE NMF II | CAMS | Karvy/KFintech registered distributor
             </p>
           </div>

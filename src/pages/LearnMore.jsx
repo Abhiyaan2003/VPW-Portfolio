@@ -34,8 +34,8 @@ const MODULES = [
     level: 'Intermediate',
     articles: [
       { title: 'STCG vs. LTCG: What Every Investor Must Know', desc: 'Short-term and long-term capital gains tax rates post-Budget 2024, with worked examples.' },
-      { title: 'ELSS: Saving Tax While Building Wealth', desc: 'How Equity Linked Savings Schemes (ELSS) qualify for Section 80C deductions and why they\'re superior to PPF for long horizons.' },
-      { title: 'Dividend Taxation: The New Regime', desc: 'Post-2020, dividends are taxable in the hands of investors. Here\'s how to plan around it.' },
+      { title: 'ELSS: Saving Tax While Building Wealth', desc: "How Equity Linked Savings Schemes (ELSS) qualify for Section 80C deductions and why they're superior to PPF for long horizons." },
+      { title: 'Dividend Taxation: The New Regime', desc: "Post-2020, dividends are taxable in the hands of investors. Here's how to plan around it." },
       { title: 'Indexation Benefits for Debt Funds', desc: 'How cost inflation indexation reduces your effective tax on debt fund gains — and who should use it.' },
     ],
   },
@@ -65,16 +65,16 @@ export default function LearnMore() {
   const module = MODULES.find(m => m.id === active)
 
   return (
-    <div className="page-enter" style={{ paddingTop: 'var(--nav-height)' }}>
+    <div className="page-enter pt-[var(--nav-height)]">
       {/* ── Page Hero ── */}
       <section className="page-hero" aria-label="Learn More About Investing">
         <div className="container">
           <div className="section-label label-sm">Learn More</div>
-          <h1 className="display-xl" style={{ maxWidth: 660, marginBottom: 24 }}>
+          <h1 className="display-xl max-w-[660px] mb-6">
             Your guide to{' '}
-            <span style={{ color: 'var(--primary)', fontStyle: 'italic' }}>intelligent investing.</span>
+            <span className="[color:var(--primary)] italic">intelligent investing.</span>
           </h1>
-          <p className="body-lg" style={{ maxWidth: 560, color: 'var(--on-surface-variant)' }}>
+          <p className="body-lg max-w-[560px] [color:var(--on-surface-variant)]">
             From first principles to advanced portfolio construction — our curated knowledge base empowers you to invest with confidence and clarity.
           </p>
         </div>
@@ -84,37 +84,23 @@ export default function LearnMore() {
       <section className="section" aria-label="Learning modules">
         <div className="container">
           <div className="section-label label-sm">Knowledge Library</div>
-          <h2 className="headline-lg" style={{ marginBottom: 40 }}>
+          <h2 className="headline-lg mb-10">
             Learn at your own pace.
           </h2>
 
           {/* Module Tabs */}
-          <div style={{
-            display: 'flex',
-            gap: 8,
-            marginBottom: 40,
-            flexWrap: 'wrap',
-            borderBottom: '1px solid rgba(255,255,255,0.07)',
-            paddingBottom: 0,
-          }}>
+          <div className="flex gap-2 mb-10 flex-wrap border-b border-white/[0.07] pb-0 overflow-x-auto">
             {MODULES.map(m => (
               <button
                 key={m.id}
                 onClick={() => setActive(m.id)}
                 id={`learn-tab-${m.id}`}
-                style={{
-                  padding: '12px 20px',
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: active === m.id ? '2px solid var(--primary)' : '2px solid transparent',
-                  color: active === m.id ? 'var(--primary)' : 'var(--on-surface-variant)',
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '0.88rem',
-                  fontWeight: active === m.id ? 600 : 400,
-                  cursor: 'pointer',
-                  transition: 'color 0.2s, border-color 0.2s',
-                  whiteSpace: 'nowrap',
-                }}
+                className={[
+                  'px-5 py-3 bg-transparent border-0 font-[var(--font-body)] text-[0.88rem] cursor-pointer transition-colors duration-200 whitespace-nowrap shrink-0',
+                  active === m.id
+                    ? '[color:var(--primary)] font-semibold border-b-2 border-b-[var(--primary)] -mb-px'
+                    : '[color:var(--on-surface-variant)] font-normal border-b-2 border-b-transparent -mb-px'
+                ].join(' ')}
               >
                 {m.title}
               </button>
@@ -123,22 +109,22 @@ export default function LearnMore() {
 
           {/* Module Content */}
           {module && (
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 32 }}>
-                <span className="material-icons" style={{ color: 'var(--primary)', fontSize: 28 }}>{module.icon}</span>
+            <div className="animate-fade-in">
+              <div className="flex items-center gap-6 mb-10">
+                <span className="material-icons [color:var(--primary)] text-[32px]">{module.icon}</span>
                 <div>
-                  <h3 style={{ fontFamily: 'Noto Serif', fontSize: '1.25rem' }}>{module.title}</h3>
-                  <span className="chip" style={{ marginTop: 6 }}>{module.level}</span>
+                  <h3 className="font-serif text-[1.5rem]">{module.title}</h3>
+                  <div className="chip mt-2">{module.level}</div>
                 </div>
               </div>
-              <div className="grid-2">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {module.articles.map(({ title, desc }) => (
-                  <div key={title} className="card" style={{ cursor: 'pointer' }}>
-                    <h4 style={{ fontFamily: 'Noto Serif', fontSize: '1rem', marginBottom: 12, lineHeight: 1.4 }}>{title}</h4>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--on-surface-variant)', lineHeight: 1.65, marginBottom: 20 }}>{desc}</p>
-                    <span style={{ color: 'var(--primary)', fontSize: '0.82rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
+                  <div key={title} className="card p-6 lg:p-10 cursor-pointer group">
+                    <h4 className="font-serif text-[1.15rem] mb-4 leading-[1.4] transition-colors group-hover:[color:var(--primary)]">{title}</h4>
+                    <p className="text-[0.95rem] [color:var(--on-surface-variant)] leading-[1.7] mb-6">{desc}</p>
+                    <span className="[color:var(--primary)] text-[0.85rem] font-semibold flex items-center gap-2">
                       Read Article
-                      <span className="material-icons" style={{ fontSize: 14 }}>arrow_forward</span>
+                      <span className="material-icons text-[16px] transition-transform group-hover:translate-x-1">arrow_forward</span>
                     </span>
                   </div>
                 ))}
@@ -149,21 +135,24 @@ export default function LearnMore() {
       </section>
 
       {/* ── Tools ── */}
-      <section className="section" style={{ background: 'var(--surface-container-lowest)' }} aria-labelledby="tools-heading">
+      <section className="section [background:var(--surface-container-lowest)]" aria-labelledby="tools-heading">
         <div className="container">
           <div className="section-label label-sm">Investment Tools</div>
-          <h2 id="tools-heading" className="headline-lg" style={{ marginBottom: 48 }}>
+          <h2 id="tools-heading" className="headline-lg mb-16">
             Tools to power your investment decisions.
           </h2>
-          <div className="grid-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {TOOLS.map(({ icon, title, desc }) => (
-              <div key={title} className="card" style={{ padding: 32, textAlign: 'center' }}>
-                <span className="material-icons" style={{ color: 'var(--primary)', fontSize: 36, marginBottom: 16, display: 'block' }}>{icon}</span>
-                <h3 style={{ fontFamily: 'Noto Serif', fontSize: '1rem', marginBottom: 10 }}>{title}</h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--on-surface-variant)', lineHeight: 1.6, marginBottom: 20 }}>{desc}</p>
-                <a href="https://research.vpwwealth.com" target="_blank" rel="noopener noreferrer" style={{
-                  color: 'var(--primary)', fontSize: '0.8rem', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 4,
-                }}>
+              <div key={title} className="card p-6 lg:p-10 text-center flex flex-col items-center">
+                <span className="material-icons [color:var(--primary)] text-[40px] mb-6 block">{icon}</span>
+                <h3 className="font-serif text-[1.1rem] mb-3">{title}</h3>
+                <p className="text-[0.9rem] [color:var(--on-surface-variant)] leading-[1.65] mb-8 flex-grow">{desc}</p>
+                <a
+                  href="https://research.vpwwealth.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-ghost py-2.5 px-6 text-[0.8rem]"
+                >
                   Open Tool ↗
                 </a>
               </div>
@@ -175,32 +164,25 @@ export default function LearnMore() {
       {/* ── Glossary Teaser ── */}
       <section className="section" aria-labelledby="glossary-heading">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
             <div>
               <div className="section-label label-sm">Glossary</div>
-              <h2 id="glossary-heading" className="headline-lg" style={{ marginBottom: 24 }}>
+              <h2 id="glossary-heading" className="headline-lg mb-8">
                 Master the language of investing.
               </h2>
-              <p className="body-md" style={{ color: 'var(--on-surface-variant)', marginBottom: 32 }}>
+              <p className="body-md [color:var(--on-surface-variant)] mb-10 leading-[1.75]">
                 Our comprehensive glossary covers 200+ financial terms — from Alpha to Zero-Cost Collar. Each definition is written in plain English and contextualised for Indian markets.
               </p>
               <a href="https://research.vpwwealth.com/glossary" target="_blank" rel="noopener noreferrer" className="btn-primary" id="learn-glossary-btn">
                 Open Full Glossary ↗
               </a>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
               {['Alpha', 'Beta', 'Sharpe Ratio', 'Sortino Ratio', 'Drawdown', 'CAGR', 'AUM', 'NAV', 'Expense Ratio', 'Exit Load'].map(term => (
-                <div key={term} style={{
-                  padding: '14px 18px',
-                  background: 'var(--surface-container-low)',
-                  borderRadius: 'var(--radius)',
-                  border: '1px solid rgba(255,255,255,0.06)',
-                  fontSize: '0.88rem',
-                  fontWeight: 500,
-                  color: 'var(--on-surface-variant)',
-                  cursor: 'default',
-                  transition: 'color 0.2s, border-color 0.2s',
-                }}>
+                <div
+                  key={term}
+                  className="px-6 py-5 [background:var(--surface-container-low)] rounded-[var(--radius-sm)] border border-white/[0.06] text-[0.95rem] font-medium [color:var(--on-surface-variant)] cursor-default transition-all duration-250 hover:[color:var(--primary)] hover:border-[rgba(242,195,69,0.2)] hover:[background:var(--surface-container)] text-center"
+                >
                   {term}
                 </div>
               ))}
@@ -210,18 +192,18 @@ export default function LearnMore() {
       </section>
 
       {/* ── Research Portal CTA ── */}
-      <section className="section" style={{ background: 'var(--surface-container-lowest)' }} aria-label="Research Portal CTA">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <span className="material-icons" style={{ color: 'var(--primary)', fontSize: 48, marginBottom: 16, display: 'block' }}>science</span>
-          <h2 className="headline-lg" style={{ marginBottom: 16 }}>Access our full Research Portal.</h2>
-          <p style={{ color: 'var(--on-surface-variant)', maxWidth: 500, margin: '0 auto 40px' }}>
+      <section className="section [background:var(--surface-container-lowest)]" aria-label="Research Portal CTA">
+        <div className="container text-center">
+          <span className="material-icons [color:var(--primary)] text-[48px] mb-4 block">science</span>
+          <h2 className="headline-lg mb-4">Access our full Research Portal.</h2>
+          <p className="[color:var(--on-surface-variant)] max-w-[500px] mx-auto mb-16">
             Registered clients get access to live fund analytics, portfolio performance attribution, and AI-generated market insights — all in one place.
           </p>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="https://research.vpwwealth.com" target="_blank" rel="noopener noreferrer" className="btn-primary" id="learn-portal-btn">
+          <div className="flex gap-4 justify-center flex-wrap">
+            <a href="https://research.vpwwealth.com" target="_blank" rel="noopener noreferrer" className="btn-primary mt-8" id="learn-portal-btn">
               Open Research Portal ↗
             </a>
-            <Link to="/contact" className="btn-ghost" id="learn-portal-register-btn">
+            <Link to="/contact" className="btn-ghost mt-8" id="learn-portal-register-btn">
               Register as Client
             </Link>
           </div>
