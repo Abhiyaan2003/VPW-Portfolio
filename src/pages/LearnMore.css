@@ -1,0 +1,240 @@
+/* ── Learn More Page Styles ── */
+
+.learn-root {
+  overflow-x: hidden;
+}
+
+/* ── Tab System ── */
+.learn-tabs {
+  display: flex;
+  gap: 48px; /* Increased */
+  border-bottom: 1px solid var(--outline-variant);
+  margin-bottom: 60px; /* Increased */
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.learn-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  padding: 20px 0; /* Increased */
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--ease-base);
+  position: relative;
+}
+
+.tab-btn:hover {
+  color: var(--on-surface);
+}
+
+.tab-btn.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--grad-gold);
+}
+
+/* ── Content Grid ── */
+.article-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 48px; /* Increased */
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: 1.375rem; /* Slightly larger */
+  margin-bottom: 16px;
+  line-height: 1.4;
+  color: var(--on-surface);
+}
+
+.article-desc {
+  color: var(--on-surface-variant);
+  line-height: 1.8;
+  font-size: 0.9375rem;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.read-link {
+  color: var(--primary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: gap 0.3s ease;
+}
+
+.article-card:hover .read-link {
+  gap: 12px;
+}
+
+/* ── Tools Section ── */
+.tool-card {
+  text-align: center;
+  padding: 60px 40px; /* Increased */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.tool-icon {
+  width: 72px; /* Slightly larger */
+  height: 72px;
+  background: rgba(245, 158, 11, 0.08);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  color: var(--primary);
+  font-size: 36px;
+}
+
+.tool-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.tool-desc {
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+/* ── Spacing Helpers ── */
+.knowledge-header, .tools-header {
+  margin-bottom: 60px;
+}
+
+.hero-headline {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.hero-subtext {
+  max-width: 600px;
+  color: var(--on-surface-variant);
+}
+
+.module-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.article-count {
+  color: var(--on-surface-variant);
+}
+
+.read-icon {
+  font-size: 16px;
+}
+
+/* ── Glossary Layout ── */
+.glossary-layout {
+  align-items: center;
+  gap: 80px;
+}
+
+.glossary-desc {
+  color: var(--on-surface-variant);
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* ── Glossary ── */
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.glossary-item {
+  padding: 16px;
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: 12px;
+  font-size: 0.875rem; 
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  text-align: center;
+  transition: all var(--ease-base);
+  cursor: default;
+}
+
+.glossary-item:hover {
+  border-color: var(--primary);
+  color: var(--on-surface);
+  background: var(--surface-container);
+}
+
+/* ── CTA Banner ── */
+.cta-banner {
+  padding: 80px;
+  border-radius: 40px;
+  background: var(--grad-dark-gold);
+  border: 1px solid var(--outline-variant);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.cta-subtext {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 500px;
+  margin-top: 16px;
+}
+
+@media (max-width: 1024px) {
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 40px;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .learn-tabs {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    padding: 32px;
+  }
+  .tool-card {
+    padding: 32px 24px;
+  }
+}

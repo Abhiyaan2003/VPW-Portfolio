@@ -1,0 +1,270 @@
+/* ── Methodology Styles ── */
+
+.methodology-root {
+  background: var(--surface-container-lowest);
+}
+
+/* ── Hero ── */
+.methodology-root .page-hero {
+  padding-top: calc(var(--nav-height) + 100px);
+  padding-bottom: 80px;
+}
+
+.methodology-root .hero-headline {
+  max-width: 800px;
+  margin-bottom: 24px;
+}
+
+.methodology-root .hero-subtext {
+  max-width: 600px;
+  color: var(--on-surface-variant);
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ── Common ── */
+.section-title {
+  margin-bottom: 48px;
+}
+
+.section-subtitle {
+  max-width: 800px;
+  color: var(--on-surface-variant);
+  margin-bottom: 60px;
+  line-height: 1.7;
+}
+
+/* ── Principles ── */
+.principles-section {
+  background: var(--surface-container-low);
+}
+
+.principle-card {
+  padding: 40px 32px;
+  height: 100%;
+}
+
+.principle-num {
+  color: var(--primary);
+  opacity: 0.6;
+  margin-bottom: 20px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.principle-card .card-title {
+  margin-bottom: 16px;
+}
+
+.principle-card .card-desc {
+  color: var(--on-surface-variant);
+  line-height: 1.7;
+}
+
+/* ── Process ── */
+.process-section {
+  background: var(--surface-container-lowest);
+}
+
+.process-card {
+  display: flex;
+  gap: 24px;
+  padding: 40px;
+  align-items: flex-start;
+}
+
+.process-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  opacity: 0.15;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 60px;
+  text-align: center;
+}
+
+.process-content .card-title {
+  margin-bottom: 12px;
+}
+
+.process-content .card-desc {
+  color: var(--on-surface-variant);
+  line-height: 1.75;
+}
+
+/* ── AI Intelligence ── */
+.ai-intelligence-section {
+  background: var(--surface-container-low);
+}
+
+.ai-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.ai-info .headline-lg {
+  margin-bottom: 24px;
+}
+
+.ai-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.ai-text-block p {
+  color: var(--on-surface-variant);
+  line-height: 1.8;
+}
+
+.ai-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 32px;
+  text-align: center;
+}
+
+.stat-number {
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+.stat-label {
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* ── Risk Management ── */
+.risk-management-section {
+  background: var(--surface-container-lowest);
+}
+
+.risk-card {
+  padding: 40px;
+  height: 100%;
+}
+
+.risk-card .card-title {
+  margin-bottom: 32px;
+}
+
+.risk-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.risk-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.risk-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+.risk-item span {
+  color: var(--on-surface-variant);
+  line-height: 1.5;
+}
+
+/* ── CTA ── */
+.methodology-cta {
+  background: var(--surface-container-lowest);
+  padding-bottom: 120px;
+}
+
+.cta-card {
+  padding: 80px 48px;
+  text-align: center;
+  border-radius: 40px;
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+}
+
+.cta-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
+  transform: rotate(15deg);
+  pointer-events: none;
+}
+
+.cta-card .headline-lg {
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.cta-desc {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: var(--on-surface-variant);
+  font-size: 1.125rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .ai-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+  }
+  
+  .ai-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-card {
+    padding: 60px 24px;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+  }
+}
