@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import RevealOnScroll from '../components/RevealOnScroll';
 import './ContactUs.css';
@@ -80,7 +80,7 @@ export default function ContactUs() {
           >
             <div className="section-label label-sm">Contact Us</div>
             <h1 className="hero-headline display-xl">
-              Let's build your wealth <span className="gold-text italic">together.</span>
+              Let's build your wealth <span className="accent-text italic">together.</span>
             </h1>
             <p className="hero-subtext body-lg">
               Whether you're a first-time investor or managing a substantial portfolio, our advisers are ready to help you navigate the next step.
@@ -94,7 +94,7 @@ export default function ContactUs() {
         <div className="container">
           <div className="grid-3">
             {QUICK_ACTIONS.map(({ id, href, external, icon, title, desc, cta, type }, idx) => (
-              <RevealOnScroll key={id} delay={idx * 100}>
+              <RevealOnScroll key={id} delay={idx * 0.1}>
                 <a 
                   href={href} 
                   {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} 
@@ -105,7 +105,7 @@ export default function ContactUs() {
                   </div>
                   <h3 className="card-title">{title}</h3>
                   <p className="card-desc body-sm">{desc}</p>
-                  {cta && <span className="card-cta gold-text">{cta}</span>}
+                  {cta && <span className="card-cta accent-text">{cta}</span>}
                 </a>
               </RevealOnScroll>
             ))}
@@ -138,7 +138,7 @@ export default function ContactUs() {
               </div>
             </RevealOnScroll>
 
-            <RevealOnScroll delay={200}>
+            <RevealOnScroll delay={0.2}>
               <AnimatePresence mode="wait">
                 {submitted ? (
                   <motion.div 
@@ -238,7 +238,7 @@ export default function ContactUs() {
               </p>
             </RevealOnScroll>
             
-            <RevealOnScroll delay={200}>
+            <RevealOnScroll delay={0.2}>
               <div className="office-card card">
                 <h3 className="office-city label-lg">Mumbai (HQ)</h3>
                 <div className="office-details">

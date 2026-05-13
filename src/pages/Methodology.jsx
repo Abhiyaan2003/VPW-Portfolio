@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import RevealOnScroll from '../components/RevealOnScroll';
@@ -45,7 +44,7 @@ export default function Methodology() {
           >
             <div className="section-label label-sm">Our Methodology</div>
             <h1 className="hero-headline display-xl">
-              Where <span className="gold-text italic">quantitative rigour</span> meets qualitative wisdom.
+              Where <span className="accent-text italic">quantitative rigour</span> meets qualitative wisdom.
             </h1>
             <p className="hero-subtext body-lg">
               Our investment process is a six-stage discipline combining proprietary machine learning models with seasoned judgment. No black boxes — full transparency at every step.
@@ -66,7 +65,7 @@ export default function Methodology() {
           </RevealOnScroll>
           <div className="grid-4">
             {PRINCIPLES.map(({ num, title, desc }, i) => (
-              <RevealOnScroll key={num} delay={i * 100}>
+              <RevealOnScroll key={num} delay={i * 0.1}>
                 <div className="principle-card card">
                   <div className="principle-num label-sm">{num}</div>
                   <h3 className="card-title label-lg">{title}</h3>
@@ -86,7 +85,7 @@ export default function Methodology() {
           </RevealOnScroll>
           <div className="grid-2">
             {STEPS.map(({ number, title, desc }, i) => (
-              <RevealOnScroll key={number} delay={(i % 2) * 100}>
+              <RevealOnScroll key={number} delay={(i % 2) * 0.1}>
                 <div className="process-card card">
                   <div className="process-num">{number}</div>
                   <div className="process-content">
@@ -121,9 +120,9 @@ export default function Methodology() {
             
             <div className="ai-stats-grid">
               {AI_STATS.map(({ number, label }, idx) => (
-                <RevealOnScroll key={label} delay={idx * 100}>
+                <RevealOnScroll key={label} delay={idx * 0.1}>
                   <div className="stat-card card">
-                    <div className="stat-number display-md gold-text">{number}</div>
+                    <div className="stat-number display-md accent-text">{number}</div>
                     <div className="stat-label body-xs">{label}</div>
                   </div>
                 </RevealOnScroll>
@@ -145,7 +144,7 @@ export default function Methodology() {
           
           <div className="grid-3">
             {RISK_DIMS.map(({ title, items }, i) => (
-              <RevealOnScroll key={title} delay={i * 100}>
+              <RevealOnScroll key={title} delay={i * 0.1}>
                 <div className="risk-card card">
                   <h3 className="card-title label-lg">{title}</h3>
                   <ul className="risk-list">

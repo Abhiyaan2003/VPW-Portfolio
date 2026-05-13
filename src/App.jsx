@@ -1,5 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { SmoothScroll } from './components/ui/SmoothScroll'
+import BackgroundSystem from './components/background/BackgroundSystem'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
@@ -11,16 +13,11 @@ import LearnMore from './pages/LearnMore'
 import ContactUs from './pages/ContactUs'
 
 export default function App() {
-  const location = useLocation()
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' })
-  }, [location.pathname])
-
   return (
-    <>
+    <SmoothScroll>
+      <BackgroundSystem />
       <Navbar />
-      <main>
+      <main className="relative z-10 bg-transparent">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -33,6 +30,6 @@ export default function App() {
       </main>
       <Footer />
       <WhatsAppFloat />
-    </>
+    </SmoothScroll>
   )
 }

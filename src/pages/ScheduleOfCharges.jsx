@@ -72,7 +72,7 @@ export default function ScheduleOfCharges() {
         <div className="container">
           <div className="grid-3">
             {HIGHLIGHTS.map(({ icon, title, desc }, i) => (
-              <RevealOnScroll key={title} delay={i * 70}>
+              <RevealOnScroll key={title} delay={i * 0.07}>
                 <div className="card" style={{ height: '100%' }}>
                   <span className="material-icons" style={{ color: 'var(--primary)', fontSize: 28, marginBottom: 16, display: 'block' }} aria-hidden="true">{icon}</span>
                   <h3 className="font-serif" style={{ fontSize: '1.0625rem', marginBottom: 10 }}>{title}</h3>
@@ -119,7 +119,7 @@ export default function ScheduleOfCharges() {
           ))}
 
           <RevealOnScroll>
-            <div className="card" style={{ borderColor: 'rgba(232,184,75,0.15)' }}>
+            <div className="card" style={{ borderColor: 'rgba(27, 67, 50, 0.15)' }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 20 }}>
                 <span className="material-icons" style={{ color: 'var(--primary)', fontSize: 20 }} aria-hidden="true">info</span>
                 <h3 className="font-serif" style={{ fontSize: '1.0625rem' }}>Important Notes</h3>

@@ -202,11 +202,11 @@
   padding: 80px 48px;
   text-align: center;
   border-radius: 40px;
-  background: var(--surface-container-low);
-  border: 1px solid var(--outline-variant);
+  background: var(--surface-dim);
+  border: 1px solid var(--outline);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-xl);
 }
 
 .cta-card::before {
@@ -216,7 +216,7 @@
   left: -10%;
   width: 60%;
   height: 200%;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(27, 67, 50, 0.05) 0%, transparent 70%);
   transform: rotate(15deg);
   pointer-events: none;
 }

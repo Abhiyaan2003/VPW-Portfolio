@@ -1,5 +1,3 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -30,8 +28,8 @@ const Footer = () => {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand-col">
-            <Link to="/" className="footer-logo">
-              VPW <span className="gold-text">WEALTH</span>
+            <Link to="/" className="footer-root">
+              VPW Wealth Management
             </Link>
             <p className="footer-tagline body-sm">
               Securing futures through institutional-grade portfolio strategies and bespoke financial guidance.

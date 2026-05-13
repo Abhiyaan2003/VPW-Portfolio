@@ -1,19 +1,19 @@
 export const tokens = {
   colors: {
     primary: {
-      light: '#f59e0b',
-      main: '#d97706',
-      dark: '#92400e',
+      light: '#2D6A4F', // Muted Hunter
+      main: '#1B4332',  // Hunter Green
+      dark: '#081C15',  // Deep Dark
     },
     surface: {
-      main: '#0a0d12',
-      dim: '#070a0e',
-      bright: '#2a303c',
-      container: '#141a22',
+      main: '#FFFFFF',      // Pure White
+      dim: '#F8FAFC',       // Slate-50
+      bright: '#F1F5F9',    // Slate-100
+      container: '#FFFFFF', // Container White
     },
     text: {
-      primary: '#e2e8f0',
-      secondary: '#94a3b8',
+      primary: '#0F172A',   // Slate-900
+      secondary: '#475569', // Slate-600
     },
   },
   spacing: {

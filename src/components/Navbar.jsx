@@ -25,6 +25,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMenuOpen(false) }, [location])
 
   return (
@@ -42,7 +43,7 @@ export default function Navbar() {
             VPW
           </motion.div>
           <div className="logo-wordmark">
-            <span className="logo-name">Wealth</span>
+            <span >Wealth</span>
             <span className="logo-tagline">Intelligent Wealth</span>
           </div>
         </Link>
@@ -60,11 +61,11 @@ export default function Navbar() {
                 <AnimatePresence>
                   {location.pathname === to && (
                     <motion.div
-                      layoutId="nav-dot"
-                      className="nav-dot"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      exit={{ scale: 0 }}
+                      layoutId="nav-pill"
+                      className="nav-pill-active"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -86,7 +87,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Invest Now
+            Join Us
           </motion.a>
         </div>
 

@@ -71,7 +71,7 @@ export default function LearnMore() {
           <RevealOnScroll direction="up">
             <div className="section-label label-sm">Learn More</div>
             <h1 className="display-xl hero-headline">
-              Your guide to <span className="gold-text italic">intelligent investing.</span>
+              Your guide to <span className="accent-text italic">intelligent investing.</span>
             </h1>
             <p className="body-lg hero-subtext">
               From first principles to advanced portfolio construction — our curated knowledge base empowers you to invest with confidence and clarity.
@@ -89,7 +89,7 @@ export default function LearnMore() {
           </RevealOnScroll>
 
           {/* Tabs */}
-          <RevealOnScroll delay={80}>
+          <RevealOnScroll delay={0.08}>
             <div role="tablist" className="learn-tabs">
               {MODULES.map(m => (
                 <button
@@ -149,7 +149,7 @@ export default function LearnMore() {
           </RevealOnScroll>
           <div className="grid-4">
             {TOOLS.map(({ icon, title, desc }, i) => (
-              <RevealOnScroll key={title} delay={i * 100}>
+              <RevealOnScroll key={title} delay={i * 0.1}>
                 <div className="card tool-card">
                   <div className="tool-icon">
                     <span className="material-icons">{icon}</span>
@@ -181,7 +181,7 @@ export default function LearnMore() {
               </a>
             </RevealOnScroll>
             
-            <RevealOnScroll delay={200} direction="right">
+            <RevealOnScroll delay={0.2} direction="right">
               <div className="glossary-grid">
                 {GLOSSARY_TERMS.map(term => (
                   <div key={term} className="glossary-item">{term}</div>
