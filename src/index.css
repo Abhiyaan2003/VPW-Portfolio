@@ -373,3 +373,9 @@ img {
 .font-serif {
   font-family: 'Times New Roman', Times, serif;
 }
+
+.accent-text {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  color: var(--primary);
+}

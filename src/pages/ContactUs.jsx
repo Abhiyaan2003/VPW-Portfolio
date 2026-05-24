@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import RevealOnScroll from '../components/RevealOnScroll';
+import Magnetic from '../components/Magnetic';
+import './PageHero.css';
 import './ContactUs.css';
 
 const WA_HREF = 'https://wa.me/919999999999?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20a%20VPW%20Wealth%20adviser';
@@ -17,6 +19,7 @@ const QUICK_ACTIONS = [
     ),
     title: 'WhatsApp Investing',
     desc: 'Chat with an adviser instantly. Available 9 AM – 9 PM IST.',
+    cta: 'Start Conversation ↗',
     type: 'whatsapp'
   },
   {
@@ -71,21 +74,27 @@ export default function ContactUs() {
 
   return (
     <div className="contact-root">
-      <section className="page-hero">
-        <div className="container">
-          <motion.div
+      <section className="page-hero" aria-label="Contact Us">
+        <div className="container hero-content">
+          <RevealOnScroll direction="down" distance={30}>
+            <div className="section-label label-sm">Contact Us</div>
+          </RevealOnScroll>
+          <motion.h1
+            className="display-xl hero-headline"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            Let's build your wealth <span className="accent-text">together.</span>
+          </motion.h1>
+          <motion.p
+            className="body-lg hero-subtext"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="section-label label-sm">Contact Us</div>
-            <h1 className="hero-headline display-xl">
-              Let's build your wealth <span className="accent-text italic">together.</span>
-            </h1>
-            <p className="hero-subtext body-lg">
-              Whether you're a first-time investor or managing a substantial portfolio, our advisers are ready to help you navigate the next step.
-            </p>
-          </motion.div>
+            Whether you're a first-time investor or managing a substantial portfolio, our advisers are ready to help you navigate the next step.
+          </motion.p>
         </div>
       </section>
 
