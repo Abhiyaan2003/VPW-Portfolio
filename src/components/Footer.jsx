@@ -41,9 +41,9 @@ const Footer = () => {
               <img src="/logo1.png" alt="VPW Wealth" className="footer-logo-img" />
             </Link>
             <p className="footer-tagline body-sm">
-              An AI Powered Investment Management Platform and Service for Affluents Indian's.
+              An AI Powered Investment Management Platform and Service for Affluent Indians.
               <br /><br />
-              Formely Victoria Paradise Advisor LLP<br />
+              Formerly Victoria Paradise Advisor LLP<br />
               LLPIN ACS 3188<br />
               HeadOffice - Siliguri, WB, IND
             </p>
