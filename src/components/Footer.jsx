@@ -9,17 +9,26 @@ const Footer = () => {
       { name: 'Home', path: '/' },
       { name: 'About', path: '/about' },
       { name: 'Services', path: '/services' },
-      { name: 'Contact', path: '/contact' }
+      { name: 'Contact', path: '/contact' },
+      { name: 'Research', path: 'https://research.onlyvpw.com' }
     ]},
-    { title: 'Legal', items: [
+    { title: 'Important', items: [
       { name: 'Privacy Policy', path: '/privacy' },
       { name: 'Terms of Service', path: '/terms' },
-      { name: 'Cookie Policy', path: '/cookies' }
+      { name: 'Cookie Policy', path: '/cookies' },
+      { name: 'Official Schedule of Charges', path: '/charges' },
+      { name: 'Scores Portal', path: 'https://scores.gov.in/' },
+      { name: 'ODR Portal', path: 'https://smartodr.in/' },
+      { name: 'SEBI Portal', path: 'https://www.sebi.gov.in/' },
+      { name: 'AMFI Portal', path: 'https://www.amfiindia.com/' },
+      { name: 'Key Personnel', path: '#' },
+      { name: 'Contact Document', path: '#' }
     ]},
     { title: 'Connect', items: [
       { name: 'LinkedIn', path: 'https://linkedin.com' },
       { name: 'Twitter', path: 'https://twitter.com' },
-      { name: 'Instagram', path: 'https://instagram.com' }
+      { name: 'Instagram', path: 'https://instagram.com' },
+      { name: 'YouTube', path: 'https://youtube.com' }
     ]}
   ];
 
@@ -28,11 +37,15 @@ const Footer = () => {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand-col">
-            <Link to="/" className="footer-root">
-              VPW Wealth Management
+            <Link to="/" className="footer-logo">
+              Victoria Paradise Wealth (VPW)
             </Link>
             <p className="footer-tagline body-sm">
-              Securing futures through institutional-grade portfolio strategies and bespoke financial guidance.
+              An AI Powered Investment Management Platform and Service for Affluents Indian's.
+              <br /><br />
+              Formely Victoria Paradise Advisor LLP<br />
+              LLPIN ACS 3188<br />
+              HeadOffice - Siliguri, WB, IND
             </p>
           </div>
 
@@ -62,10 +75,10 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p className="footer-copyright body-sm">
-            © {currentYear} VPW Wealth Management. All rights reserved.
+            © {currentYear} Victoria Paradise Advisor LLP All Rights Reserved.
           </p>
           <div className="footer-bottom-meta body-sm">
-            Designed with precision.
+            made with love from india for the world
           </div>
         </div>
       </div>

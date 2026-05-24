@@ -149,8 +149,16 @@
 /* Removed complex spanning for uniform grid */
 .service-bento-large, .service-bento-medium, .service-bento-small { grid-column: span 1; grid-row: span 1; }
 
+/* ── Section Headers ── */
+.section-header {
+  text-align: left;
+}
+
 /* ── FAQ ── */
 .faq-section { background: var(--surface); }
+.faq-grid {
+  grid-template-columns: 1fr 1.5fr;
+}
 .faq-container { max-width: 900px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid var(--outline-variant); }
 .faq-trigger {
@@ -194,14 +202,24 @@
 /* Responsive */
 @media (max-width: 1200px) {
   .hero-visual { display: none; }
-  .hero-content { max-width: 100%; text-align: center; }
+  .hero-content { max-width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
   .hero-actions { justify-content: center; }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; width: 100%; }
 }
 
 @media (max-width: 1024px) {
   .service-bento-grid { grid-template-columns: repeat(2, 1fr); }
   .service-bento-large { grid-column: span 2; }
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 40px !important;
+  }
+  .section-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {

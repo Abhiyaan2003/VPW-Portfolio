@@ -70,16 +70,18 @@ function FAQItem({ question, answer }) {
           expand_more
         </span>
       </button>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            className="faq-content"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
+            style={{ overflow: 'hidden' }}
           >
-            {answer}
+            <div className="faq-content">
+              {answer}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -144,12 +146,12 @@ export default function Home() {
           >
             <Magnetic>
               <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Invest via WhatsApp
+                Join the waiting list
                 <span className="material-icons">arrow_forward</span>
               </a>
             </Magnetic>
             <Magnetic>
-              <Link to="/methodology" className="btn-ghost">Our Methodology</Link>
+              <Link to="/LearnMore" className="btn-ghost">Learn more</Link>
             </Magnetic>
           </motion.div>
 
@@ -173,10 +175,12 @@ export default function Home() {
       <section className="section services-section" aria-labelledby="services-heading">
         <div className="container">
           <RevealOnScroll>
-            <span className="label-sm">Our Expertise</span>
-            <h2 id="services-heading" className="headline-lg" style={{ maxWidth: 600, marginBottom: 64 }}>
-              Bespoke investment vehicles, managed with rigour.
-            </h2>
+            <div className="section-header">
+              <span className="label-sm">Our Expertise</span>
+              <h2 id="services-heading" className="headline-lg" style={{ maxWidth: 600, marginBottom: 64 }}>
+                Bespoke investment vehicles, managed with rigour.
+              </h2>
+            </div>
           </RevealOnScroll>
 
           <motion.div
@@ -214,10 +218,12 @@ export default function Home() {
       {/* ── FAQ ── */}
       <section className="section faq-section" aria-labelledby="faq-heading">
         <div className="container">
-          <div className="grid" style={{ gridTemplateColumns: '1fr 1.5fr', gap: 80 }}>
+          <div className="grid faq-grid" style={{ gap: 80 }}>
             <RevealOnScroll>
-              <span className="label-sm">Common Questions</span>
-              <h2 id="faq-heading" className="headline-lg">Everything you need to know.</h2>
+              <div className="section-header">
+                <span className="label-sm">Common Questions</span>
+                <h2 id="faq-heading" className="headline-lg">Everything you need to know.</h2>
+              </div>
             </RevealOnScroll>
             <div className="faq-container">
               {FAQS.map((faq) => (
