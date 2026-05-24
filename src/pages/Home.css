@@ -60,14 +60,15 @@
 
 .hero-actions {
   display: flex;
-  gap: 20px;
-  margin-bottom: 80px;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 64px;            /* 8×8 */
 }
 
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 32px;                      /* 4×8 — was 40 (off grid) */
   padding: 40px 0;
   border-top: 1px solid var(--outline-variant);
 }
@@ -180,7 +181,8 @@
 
 .faq-trigger {
   width: 100%;
-  padding: 28px 24px;
+  padding: 24px;                  /* 3×8 — symmetric, touch-friendly */
+  min-height: 48px;               /* touch target ≥44px */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -189,7 +191,7 @@
   border: none;
   cursor: pointer;
   gap: 16px;
-  transition: background 0.2s;
+  transition: background 0.18s ease;
 }
 
 .faq-trigger:hover {
@@ -226,11 +228,12 @@
 .cta-card {
   background: var(--primary);
   color: white;
-  padding: 80px;
+  padding: clamp(40px, 6vw, 80px) clamp(32px, 6vw, 80px); /* fluid padding */
   border-radius: var(--radius-lg);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 40px;
   position: relative;
   overflow: hidden;
 }
@@ -248,7 +251,7 @@
 .cta-content { position: relative; z-index: 1; max-width: 600px; }
 .cta-actions { position: relative; z-index: 1; }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 1200px) {
   .hero-visual { display: none; }
   .hero-content { max-width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
@@ -265,10 +268,19 @@
     flex-direction: column;
     align-items: center;
   }
+  .cta-card { flex-direction: column; text-align: center; align-items: center; }
 }
 
 @media (max-width: 768px) {
   .service-bento-grid { grid-template-columns: 1fr; }
   .service-bento-large { grid-column: span 1; }
-  .cta-card { flex-direction: column; text-align: center; gap: 40px; padding: 60px 30px; }
+  .service-card { padding: 28px; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .faq-question { font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .stat-number { font-size: 1.375rem; }
+  .hero-badge { margin-bottom: 28px; }
 }

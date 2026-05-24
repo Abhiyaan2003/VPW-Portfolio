@@ -12,5 +12,5 @@ dist-ssr
 .env
 content/
 .graphifyignore
-graphify-out/
-.agents/
+graphify-out
+.agents
