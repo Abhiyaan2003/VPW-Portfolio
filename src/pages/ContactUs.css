@@ -139,7 +139,7 @@
 /* ── Form Section ── */
 .form-section {
   background: var(--surface-container-lowest);
-  padding: 120px 0;
+  padding: clamp(64px, 8vw, 120px) 0; /* was fixed 120px */
   border-top: 1px solid var(--outline-variant);
   border-bottom: 1px solid var(--outline-variant);
 }
@@ -147,7 +147,7 @@
 .form-layout-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 120px;
+  gap: clamp(48px, 8vw, 96px);   /* was 120px — excessive */
   align-items: start;
 }
 
@@ -303,14 +303,14 @@
 
 /* ── Office ── */
 .office-section {
-  padding: 120px 0 160px;
+  padding: clamp(64px, 8vw, 120px) 0 clamp(64px, 8vw, 120px); /* was 120/160 */
   background: var(--surface-container-low);
 }
 
 .office-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 120px;
+  gap: clamp(48px, 7vw, 96px);   /* was 120px — excessive */
   align-items: center;
 }
 
@@ -327,11 +327,11 @@
 }
 
 .office-card {
-  padding: 48px 60px;
+  padding: clamp(32px, 5vw, 56px); /* was asymmetric 48px 60px */
   background: var(--surface);
   border: 1px solid var(--outline-variant);
-  border-radius: 16px;
-  box-shadow: 0 12px 36px rgba(27, 67, 50, 0.03);
+  border-radius: var(--radius-md); /* use token, was hard-coded 16px */
+  box-shadow: var(--shadow-md);
 }
 
 .office-city {
@@ -381,7 +381,7 @@
 @media (max-width: 1024px) {
   .form-layout-grid, .office-layout {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 48px;
   }
   
   .form-info-panel {
@@ -397,5 +397,30 @@
   
   .contact-form {
     padding: 32px 24px;
+  }
+
+  .trust-points-list {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 24px 16px;
+    border-radius: var(--radius-sm);
+  }
+
+  .office-card {
+    padding: 24px;
+  }
+
+  .quick-action-card {
+    padding: 32px 20px;
+  }
+
+  .quick-action-card .icon-wrapper {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
   }
 }

@@ -1,0 +1,396 @@
+/* ══════════════════════════════════════════
+   Schedule of Charges — Page Styles
+   8pt grid · ui-ux-pro-max compliant
+   Breakpoints: 768 / 1024 / 1280
+══════════════════════════════════════════ */
+
+/* ── Section spacing overrides ── */
+.soc-plans-section {
+  padding: 80px 0 40px;          /* reduce double-space: last card adds its own mb-64 */
+  background: var(--surface-container-lowest);
+}
+
+/* ── Plan Card ── */
+.plan-card {
+  margin-bottom: 64px;            /* 8×8 = 64px — on 8pt grid */
+  background: var(--surface);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md); /* 16px — consistent with site radius system */
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.plan-card:last-child {
+  margin-bottom: 0;
+}
+
+.plan-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Plan Header ── */
+.plan-header {
+  padding: 32px 40px;             /* 32 = 4×8, 40 = 5×8 */
+  border-bottom: 1px solid var(--outline-variant);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;                      /* 2×8 */
+  align-items: center;            /* centre-align, not baseline — badge needs vertical centering */
+  justify-content: space-between;
+}
+
+.plan-name {
+  font-size: clamp(1.375rem, 2.5vw, 1.75rem);  /* fluid type — responsive without jarring jumps */
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--on-surface);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.plan-tagline {
+  font-size: 0.75rem;             /* 12px — label level */
+  color: var(--on-surface-variant);
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.plan-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;              /* 8px top/bottom = 1×8; 16px = 2×8 */
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;            /* prevent badge wrapping mid-word */
+  flex-shrink: 0;
+}
+
+/* ── Plan Body ── */
+.plan-body {
+  padding: 40px;                  /* 5×8 — uniform all sides for cleanliness */
+}
+
+/* ── Table Section Label ── */
+.table-section-label {
+  font-size: 0.6875rem;           /* 11px — true label scale */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin-bottom: 12px;            /* tighter—label sits close to its table */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.table-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--outline-variant);
+}
+
+/* ── Table Wrapper ── */
+.table-wrap {
+  border-radius: var(--radius-sm); /* 8px — inner element, one step down from card's radius */
+  border: 1px solid var(--outline-variant);
+  overflow: hidden;
+  overflow-x: auto;               /* horizontal scroll on small screens — no layout break */
+  margin-bottom: 32px;            /* 4×8 */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Modern Table (soc-table) ── */
+.soc-table {
+  width: 100%;
+  min-width: 560px;               /* prevent crushed columns; triggers wrapper scroll on mobile */
+  border-collapse: collapse;
+  text-align: left;
+  background: var(--surface);
+  table-layout: fixed;            /* equal-column discipline; prevents first-col dominance */
+}
+
+/* Column widths — distribute space intentionally */
+.soc-table.benefits-table col:nth-child(1) { width: 28%; }
+.soc-table.benefits-table col:nth-child(2) { width: 48%; }
+.soc-table.benefits-table col:nth-child(3) { width: 24%; }
+
+.soc-table.charges-table col:nth-child(1) { width: 36%; }
+.soc-table.charges-table col:nth-child(2) { width: 24%; }
+.soc-table.charges-table col:nth-child(3) { width: 40%; }
+
+/* Header */
+.soc-table thead tr {
+  background: var(--surface-container-lowest);
+}
+
+.soc-table th {
+  padding: 12px 20px;             /* 12 = 1.5×8, 20 = 2.5×8 */
+  font-size: 0.6875rem;           /* 11px */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--on-surface-variant);
+  border-bottom: 1px solid var(--outline-variant);
+  white-space: nowrap;
+}
+
+/* Body cells */
+.soc-table td {
+  padding: 16px 20px;             /* 2×8 vertical, 2.5×8 horizontal — touch-friendly */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--outline-variant);
+  vertical-align: middle;
+  word-break: break-word;         /* long strings like rate strings don't overflow */
+}
+
+.soc-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.soc-table tbody tr {
+  transition: background 0.18s ease;
+}
+
+.soc-table tbody tr:hover {
+  background: rgba(27, 67, 50, 0.025);
+}
+
+/* ── Rate / Value Pill Badges ── */
+.rate-nil {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  background: rgba(27, 67, 50, 0.08);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.rate-waived {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  background: rgba(212, 175, 55, 0.12);
+  color: #7a5a0a;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.rate-amount {
+  font-weight: 600;
+  color: var(--on-surface);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.value-included {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: rgba(27, 67, 50, 0.07);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.value-free {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  background: rgba(212, 175, 55, 0.12);
+  color: #7a5a0a;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.value-default {
+  font-weight: 600;
+  color: var(--on-surface);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* ── Plan Note ── */
+.plan-note {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px 20px;             /* 2×8 all around */
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--outline-variant);
+  margin-top: 0;                  /* table-wrap has margin-bottom 32px already */
+}
+
+.plan-note .material-icons {
+  font-size: 16px;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 3px;                /* optical alignment with first line of text */
+}
+
+.plan-note p {
+  font-size: 0.8125rem;           /* 13px — clearly a note, not body */
+  color: var(--on-surface-variant);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── T&C Block ── */
+.tc-block {
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.tc-item {
+  display: flex;
+  gap: 24px;                      /* 3×8 */
+  padding: 24px 36px;             /* 3×8 vertical, 4.5×8 horizontal */
+  background: var(--surface);
+  border-bottom: 1px solid var(--outline-variant);
+  transition: background 0.18s ease;
+  align-items: flex-start;
+}
+
+.tc-item:last-child {
+  border-bottom: none;
+}
+
+.tc-item:hover {
+  background: rgba(27, 67, 50, 0.02);
+}
+
+.tc-num {
+  font-size: 0.75rem;             /* matches label-sm — consistent scale */
+  font-weight: 800;
+  color: var(--primary);
+  flex-shrink: 0;
+  min-width: 32px;
+  padding-top: 2px;               /* optical vertical alignment with title */
+  letter-spacing: 0.05em;
+  font-family: var(--font-body);  /* use global sans-serif — no serif mismatch */
+}
+
+.tc-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--on-surface);
+  line-height: 1.4;
+}
+
+.tc-text {
+  font-size: 0.875rem;            /* 14px — comfortable reading scale */
+  color: var(--on-surface-variant);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Highlights Grid spacing ── */
+.soc-highlights-section {
+  padding: 80px 0;
+}
+
+/* ── Responsive: 1024px (tablet landscape) ── */
+@media (max-width: 1024px) {
+  .plan-header {
+    padding: 28px 32px;
+  }
+
+  .plan-body {
+    padding: 32px;
+  }
+
+  .tc-item {
+    padding: 20px 28px;
+  }
+}
+
+/* ── Responsive: 768px (tablet portrait / large mobile) ── */
+@media (max-width: 768px) {
+  .soc-plans-section {
+    padding: 48px 0 16px;
+  }
+
+  .plan-card {
+    margin-bottom: 40px;
+    border-radius: var(--radius-sm); /* flatten on mobile — feels native */
+  }
+
+  .plan-header {
+    padding: 20px 20px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .plan-name {
+    font-size: 1.25rem;
+  }
+
+  .plan-body {
+    padding: 20px;
+  }
+
+  .plan-badge {
+    font-size: 0.6875rem;
+    padding: 6px 12px;
+  }
+
+  .soc-table th,
+  .soc-table td {
+    padding: 12px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .tc-item {
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  .tc-num {
+    min-width: 24px;
+    font-size: 0.6875rem;
+  }
+
+  .tc-title {
+    font-size: 0.875rem;
+  }
+
+  .tc-text {
+    font-size: 0.8125rem;
+  }
+
+  .table-section-label {
+    font-size: 0.625rem;
+  }
+}
+
+/* ── Responsive: 480px (small mobile) ── */
+@media (max-width: 480px) {
+  .plan-body {
+    padding: 16px;
+  }
+
+  .plan-header {
+    padding: 16px;
+  }
+}
