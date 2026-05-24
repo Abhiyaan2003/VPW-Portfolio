@@ -60,23 +60,23 @@ const FAQS = [
   { question: 'How do I start investing?', answer: 'You can begin by contacting us via WhatsApp or scheduling a consultation through our contact page. We will guide you through the risk profiling and onboarding process.' },
 ]
 
-function FAQItem({ question, answer }) {
-  const [isOpen, setIsOpen] = useState(false)
+function FAQItem({ question, answer, isOpen, onToggle }) {
   return (
-    <div className="faq-item">
-      <button className="faq-trigger" onClick={() => setIsOpen(!isOpen)}>
+    <div className={`faq-item${isOpen ? ' faq-item--open' : ''}`}>
+      <button className="faq-trigger" onClick={onToggle} aria-expanded={isOpen}>
         <span className="faq-question">{question}</span>
-        <span className="material-icons" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: '0.3s' }}>
-          expand_more
+        <span className="faq-chevron material-icons" aria-hidden="true">
+          {isOpen ? 'remove' : 'add'}
         </span>
       </button>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            key="answer"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             style={{ overflow: 'hidden' }}
           >
             <div className="faq-content">
@@ -99,7 +99,14 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
 }
 
+
 export default function Home() {
+  const [openFaqIndex, setOpenFaqIndex] = useState(null)
+
+  const handleFaqToggle = (idx) => {
+    setOpenFaqIndex(prev => prev === idx ? null : idx)
+  }
+
   return (
     <main className="home-root">
       {/* ── Hero ── */}
@@ -115,7 +122,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <span className="material-icons" style={{ fontSize: 16, color: 'var(--secondary)' }}>verified_user</span>
-            <span className="label-sm" style={{ margin: 0 }}>SEBI Registered RIA</span>
+            <span className="label-sm" style={{ margin: 0 }}>AI Powered Investment Planner</span>
           </motion.div>
 
           <motion.h1
@@ -218,19 +225,24 @@ export default function Home() {
       {/* ── FAQ ── */}
       <section className="section faq-section" aria-labelledby="faq-heading">
         <div className="container">
-          <div className="grid faq-grid" style={{ gap: 80 }}>
-            <RevealOnScroll>
-              <div className="section-header">
-                <span className="label-sm">Common Questions</span>
-                <h2 id="faq-heading" className="headline-lg">Everything you need to know.</h2>
-              </div>
-            </RevealOnScroll>
+          <RevealOnScroll>
+            <div className="section-header faq-header">
+              <span className="label-sm">Common Questions</span>
+              <h2 id="faq-heading" className="headline-lg">Everything you need to know.</h2>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.1}>
             <div className="faq-container">
-              {FAQS.map((faq) => (
-                <FAQItem key={faq.question} {...faq} />
+              {FAQS.map((faq, idx) => (
+                <FAQItem
+                  key={faq.question}
+                  {...faq}
+                  isOpen={openFaqIndex === idx}
+                  onToggle={() => handleFaqToggle(idx)}
+                />
               ))}
             </div>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
