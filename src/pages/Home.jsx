@@ -29,7 +29,7 @@ const SERVICES = [
     icon: 'pie_chart',
     title: 'Mutual Funds',
     desc: 'Curated, high-conviction funds prioritising capital preservation.',
-    link: '/learn',
+    link: '/LearnMore',
     linkText: 'Explore Funds',
     className: 'service-bento-small',
   },

@@ -7,9 +7,8 @@ const LINKS = [
   { to: '/',            label: 'Home' },
   { to: '/about',       label: 'About' },
   { to: '/methodology', label: 'Methodology' },
-  { to: '/charges',     label: 'Charges' },
-  { to: '/learn',       label: 'Learn' },
-  { to: '/contact',     label: 'Contact' },
+  { to: '/ScheduleOfCharges',     label: 'Schedule Of Charges' },
+  { to: '/ContactUs',     label: 'Contact' },
 ]
 
 const WA_HREF = 'https://wa.me/919999999999?text=Hello%2C%20I%20want%20to%20start%20investing%20with%20VPW%20Wealth'
@@ -34,18 +33,13 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="navbar-logo" aria-label="VPW Wealth — Home">
-          <motion.div 
-            className="logo-mark" 
-            aria-hidden="true"
+          <motion.img 
+            src="/logo1.png"
+            alt="VPW Wealth"
+            className="logo-img-vpw"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-          >
-            VPW
-          </motion.div>
-          <div className="logo-wordmark">
-            <span >Wealth</span>
-            <span className="logo-tagline">Intelligent Wealth</span>
-          </div>
+          />
         </Link>
 
         {/* Desktop Links */}

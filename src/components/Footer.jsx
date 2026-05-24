@@ -37,8 +37,8 @@ const Footer = () => {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand-col">
-            <Link to="/" className="footer-logo">
-              Victoria Paradise Wealth (VPW)
+            <Link to="/" className="footer-logo-container" aria-label="VPW Wealth — Home">
+              <img src="/logo1.png" alt="VPW Wealth" className="footer-logo-img" />
             </Link>
             <p className="footer-tagline body-sm">
               An AI Powered Investment Management Platform and Service for Affluents Indian's.

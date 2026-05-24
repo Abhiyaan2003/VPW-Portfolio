@@ -1,164 +1,321 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, useInView, animate } from 'framer-motion'
 import RevealOnScroll from '../components/RevealOnScroll'
 import './LearnMore.css'
 
-const MODULES = [
+const WA_HREF = 'https://wa.me/919999999999?text=Hello%2C%20I%20want%20to%20start%20investing%20with%20VPW%20Wealth'
+
+const PROBLEM_POINTS = [
+  'Switching between 4–6 apps for different asset classes',
+  'Shallow "robo-advisors" with no real intelligence',
+  'No holistic view of your wealth and goals',
+  'Research scattered across platforms, rarely personalized',
+  'Middle-class investors locked out of premium products',
+  'No one managing the bigger picture on your behalf',
+]
+
+const STEPS = [
   {
-    id: 'basics',
-    title: 'Investing Fundamentals',
-    level: 'Beginner',
-    articles: [
-      { title: 'What is a Mutual Fund?', desc: 'Understand the structure, types, and mechanics of mutual funds in India — the bedrock of your investment journey.' },
-      { title: 'SIP vs. Lump Sum — Which is Right for You?', desc: 'A quantitative comparison of systematic vs. one-time investing strategies across different market cycles.' },
-      { title: 'Understanding NAV and Its Myths', desc: 'Why a high NAV is not expensive and a low NAV is not cheap — and the real metrics that matter.' },
-      { title: 'Direct vs. Regular Plans', desc: 'The mathematics of the Direct Plan advantage and how expense ratio differences compound over time.' },
-    ],
+    number: '01',
+    icon: 'track_changes',
+    title: 'Plan',
+    desc: 'Your wealth journey starts with a real plan — not a generic questionnaire. AI-powered goal mapping, risk profiling, and strategic allocation built around your life, your ambitions, and your timeline.',
   },
   {
-    id: 'categories',
-    title: 'Fund Categories Explained',
-    level: 'Intermediate',
-    articles: [
-      { title: 'Equity Fund Categories — SEBI Definitions', desc: 'From Large Cap to Multi Cap to Flexicap: a complete guide to every equity fund category mandated by SEBI.' },
-      { title: 'Debt Funds: The Forgotten Asset Class', desc: 'Duration risk, credit risk, and the role of debt in a balanced portfolio — explained without jargon.' },
-      { title: 'Hybrid Funds: Best of Both Worlds?', desc: 'Balanced Advantage, Aggressive Hybrid, Equity Savings — when each category makes sense.' },
-      { title: 'International Funds: Accessing Global Growth', desc: 'Risks, taxation, and the right allocation to international equity for Indian investors.' },
-    ],
+    number: '02',
+    icon: 'account_balance_wallet',
+    title: 'Invest',
+    desc: 'Access equities, mutual funds, ETFs, bonds, gold, silver, SIFs, and alternative investments — all in one place. Premium investment products that were once reserved for the privileged few, now within reach.',
   },
   {
-    id: 'taxation',
-    title: 'Taxation of Mutual Funds',
-    level: 'Intermediate',
-    articles: [
-      { title: 'STCG vs. LTCG: What Every Investor Must Know', desc: 'Short-term and long-term capital gains tax rates post-Budget 2024, with worked examples.' },
-      { title: 'ELSS: Saving Tax While Building Wealth', desc: "How Equity Linked Savings Schemes qualify for Section 80C deductions and why they're superior to PPF for long horizons." },
-      { title: 'Dividend Taxation: The New Regime', desc: "Post-2020, dividends are taxable in the hands of investors. Here's how to plan around it." },
-      { title: 'Indexation Benefits for Debt Funds', desc: 'How cost inflation indexation reduces your effective tax on debt fund gains — and who should use it.' },
-    ],
-  },
-  {
-    id: 'advanced',
-    title: 'Advanced Investing',
-    level: 'Advanced',
-    articles: [
-      { title: 'Factor Investing: Quality, Value, Momentum', desc: 'How systematic factor exposures can enhance portfolio returns while managing tail risk.' },
-      { title: 'Portfolio Construction: Beyond Diversification', desc: 'Correlation matrices, Modern Portfolio Theory, and the efficient frontier — applied to mutual fund portfolios.' },
-      { title: 'Reading a Fund Factsheet Like a Pro', desc: 'Risk ratios, portfolio characteristics, and hidden red flags in monthly fund factsheets.' },
-      { title: 'Behavioural Biases That Destroy Wealth', desc: 'Recency bias, loss aversion, home country bias — and evidence-based strategies to overcome them.' },
-    ],
+    number: '03',
+    icon: 'query_stats',
+    title: 'Manage',
+    desc: 'Ongoing portfolio intelligence — not set-and-forget. AI-driven observations, risk scoring, rebalancing signals, and research insights keep your wealth strategy in sync with a changing world.',
   },
 ]
 
-const TOOLS = [
-  { icon: 'calculate', title: 'SIP Calculator', desc: 'Estimate your corpus from monthly SIP investments over any time horizon.' },
-  { icon: 'compare', title: 'Fund Comparison', desc: 'Compare any two funds across 20+ parameters. Available in Research Portal.' },
-  { icon: 'trending_up', title: 'Goal Planner', desc: 'Work backwards from your financial goal to determine the SIP amount needed.' },
-  { icon: 'account_balance', title: 'Tax Estimator', desc: 'Estimate capital gains tax liability before redeeming your mutual fund units.' },
+const AI_FEATURES = [
+  {
+    icon: 'analytics',
+    title: 'AI Portfolio Analytics',
+    desc: 'Real-time observation of your portfolio — identifying concentration risks, performance patterns, and emerging opportunities aligned with your goals.',
+  },
+  {
+    icon: 'speed',
+    title: 'AI Risk Scoring',
+    desc: 'Dynamic risk intelligence that adapts to market conditions. Know where you stand — before markets move, not after.',
+  },
+  {
+    icon: 'public',
+    title: 'AI Market Analysis',
+    desc: 'Macro and thematic signals processed at scale. Institutional-grade market intelligence, synthesized and delivered without the jargon.',
+  },
+  {
+    icon: 'auto_awesome',
+    title: 'AI Research Summarization',
+    desc: 'Thousands of data points, sector reports, and market research — distilled into clear, actionable wealth insights every day.',
+  },
+  {
+    icon: 'grid_view',
+    title: 'AI Strategic Allocation Support',
+    desc: 'Not just what to hold — but how much, when, and why. Strategic allocation guidance informed by data, not commissions.',
+  },
 ]
 
-const GLOSSARY_TERMS = ['Alpha', 'Beta', 'Sharpe Ratio', 'Sortino Ratio', 'Drawdown', 'CAGR', 'AUM', 'NAV', 'Expense Ratio', 'Exit Load']
+const AI_CHIPS = [
+  'Portfolio Intelligence',
+  'Wealth Insights',
+  'Risk Scoring',
+  'Market Analysis',
+  'Research Digest',
+  'Goal Tracking',
+  'Allocation Signals',
+  'Sector Research',
+  'Macro Intelligence',
+  'Thematic Alerts',
+  'Rebalancing Cues',
+  'Performance Analytics',
+]
+
+const UNIVERSE = [
+  { name: 'Equities', icon: '📈' },
+  { name: 'Mutual Funds', icon: '🏛️' },
+  { name: 'ETFs', icon: '◈' },
+  { name: 'Bonds', icon: '📄' },
+  { name: 'Gold', icon: '🥇' },
+  { name: 'Silver', icon: '⬡' },
+  { name: 'Infrastructure', icon: '🏗️' },
+  { name: 'PMS Access', icon: '◆' },
+  { name: 'SIF Access', icon: '🔐' },
+  { name: 'Alternatives', icon: '🌐' },
+]
+
+const TIERS = [
+  {
+    id: 'first',
+    badge: 'Entry Tier',
+    name: 'First',
+    tagline: '"I have started building wealth."',
+    eligibility: 'No Minimum Portfolio',
+    features: [
+      'AI wealth intelligence access',
+      'Standard investment execution',
+      'Entry into VPW ecosystem',
+      'Low-friction onboarding',
+      'Goal planning tools',
+    ],
+    letter: 'F',
+  },
+  {
+    id: 'axis',
+    badge: 'Builder Tier',
+    name: 'Axis',
+    tagline: '"I am becoming financially powerful."',
+    eligibility: 'Min. ₹5 Lakh Portfolio',
+    features: [
+      'Everything in First, plus:',
+      'Research portal access',
+      'SIF investment access',
+      'Priority servicing & support',
+      'VPW Forest Prepaid Card eligibility',
+      'Wealth intelligence positioning',
+      'Higher relationship management layer',
+    ],
+    featured: true,
+    letter: 'A',
+  },
+  {
+    id: 'circle',
+    badge: 'Elite Tier',
+    name: 'Circle',
+    tagline: '"I belong within elite financial circles."',
+    eligibility: 'Min. ₹25 Lakh Portfolio',
+    features: [
+      'Everything in Axis, plus:',
+      'Research terminal access',
+      'International SIF access',
+      'Private wealth community',
+      'Dedicated wealth desk',
+      'VPW Gold Prepaid Card eligibility',
+      'Premium relationship management',
+      'Invitation-only elite network (future)',
+    ],
+    letter: 'C',
+  },
+]
+
+const FOUNDING_PERKS = [
+  { value: '₹20L', label: 'AUM fee waived up to ₹20 Lakh' },
+  { value: '₹399', label: 'Annual maintenance — 5 years' },
+  { value: '5 Yr', label: 'Platform fee waived — first 5 years' },
+  { value: '1:1', label: 'Exclusive consultation access' },
+  { value: '∞', label: 'Research access included' },
+]
+
+const RESEARCH_CARDS = [
+  {
+    icon: 'insert_chart_outlined',
+    title: 'Market Reports',
+    desc: 'Regular macroeconomic and market briefings synthesized for actionable wealth intelligence.',
+  },
+  {
+    icon: 'business',
+    title: 'Sector Research',
+    desc: 'Deep-dive sector analysis and thematic reports covering emerging opportunities across Indian and global markets.',
+  },
+  {
+    icon: 'psychology',
+    title: 'AI-Generated Insights',
+    desc: 'Machine intelligence synthesizing thousands of data signals into concise, decision-ready insights for your portfolio.',
+  },
+  {
+    icon: 'description',
+    title: 'Investment Strategy Papers',
+    desc: 'Institutional-quality strategic research — the kind previously gatekept behind private banking relationships.',
+  },
+  {
+    icon: 'schema',
+    title: 'Model Portfolios',
+    desc: 'Curated model portfolios across risk profiles and investment goals, backed by rigorous research methodology.',
+  },
+]
+
+const INSPIRED_BY = [
+  { name: 'Bloomberg Terminal', role: 'Research ecosystem' },
+  { name: 'BlackRock Intelligence', role: 'Asset intelligence at scale' },
+  { name: 'McKinsey Research', role: 'Depth of analysis' },
+  { name: 'Private Banking', role: 'Relationship-driven access' },
+]
+
+function FoundingCounter() {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-10%' })
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(0, 250, {
+        duration: 2.0,
+        ease: 'easeOut',
+        onUpdate: (value) => setCount(Math.round(value)),
+      })
+      return () => controls.stop()
+    }
+  }, [isInView])
+
+  return (
+    <div ref={ref} className="founding-counter body-md">
+      Only <span className="counter-number">{count}</span> founding memberships available
+    </div>
+  )
+}
 
 export default function LearnMore() {
-  const [active, setActive] = useState('basics')
-  const module = MODULES.find(m => m.id === active)
+  const tiersRef = useRef(null)
+
+  const handleScrollToTiers = (e) => {
+    e.preventDefault()
+    tiersRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <div className="learn-root page-enter">
-      <section className="page-hero">
+      {/* Hero Section */}
+      <section className="learn-hero">
+        <div className="learn-hero-bg" />
         <div className="container">
           <RevealOnScroll direction="up">
-            <div className="section-label label-sm">Learn More</div>
-            <h1 className="display-xl hero-headline">
-              Your guide to <span className="accent-text italic">intelligent investing.</span>
+            <div className="hero-divider-line" />
+            <div className="section-label label-sm">Victoria Paradise Wealth</div>
+            <h1 className="display-xl learn-hero-headline">
+              Not just investing —<br />
+              <span className="accent-font gradient-text block-span">a wealth operating system</span>
+              built for India.
             </h1>
-            <p className="body-lg hero-subtext">
-              From first principles to advanced portfolio construction — our curated knowledge base empowers you to invest with confidence and clarity.
+            <p className="body-lg learn-hero-subtext">
+              AI-driven investment intelligence for India's emerging affluent. We handle the complexity — you focus on building wealth.
             </p>
-          </RevealOnScroll>
-        </div>
-      </section>
-
-      {/* Learning Modules */}
-      <section className="section">
-        <div className="container">
-          <RevealOnScroll className="knowledge-header">
-            <div className="section-label label-sm">Knowledge Library</div>
-            <h2 className="headline-lg">Learn at your own pace.</h2>
-          </RevealOnScroll>
-
-          {/* Tabs */}
-          <RevealOnScroll delay={0.08}>
-            <div role="tablist" className="learn-tabs">
-              {MODULES.map(m => (
-                <button
-                  key={m.id}
-                  role="tab"
-                  aria-selected={active === m.id}
-                  onClick={() => setActive(m.id)}
-                  className={`tab-btn ${active === m.id ? 'active' : ''}`}
-                >
-                  {m.title}
-                </button>
-              ))}
+            
+            <div className="learn-hero-pillars">
+              <div className="learn-pillar">
+                <span className="pillar-dot" /> Plan
+              </div>
+              <div className="learn-pillar">
+                <span className="pillar-dot" /> Invest
+              </div>
+              <div className="learn-pillar">
+                <span className="pillar-dot" /> Manage
+              </div>
             </div>
 
-            <AnimatePresence mode="wait">
-              {module && (
-                <motion.div
-                  key={module.id}
-                  initial={{ opacity: 0, x: 10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -10 }}
-                  transition={{ duration: 0.3, ease: 'easeOut' }}
-                >
-                  <div className="module-meta">
-                    <span className="chip">
-                      {module.level}
-                    </span>
-                    <span className="label-sm article-count">
-                      {module.articles.length} articles
-                    </span>
-                  </div>
-                  <div className="grid-2">
-                    {module.articles.map(({ title, desc }) => (
-                      <div key={title} className="card article-card">
-                        <h4 className="article-title">{title}</h4>
-                        <p className="article-desc">{desc}</p>
-                        <span className="read-link">
-                          Read Article
-                          <span className="material-icons read-icon">arrow_forward</span>
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div className="learn-hero-scroll">
+              <div className="scroll-indicator-line" />
+              Scroll to explore
+            </div>
           </RevealOnScroll>
         </div>
       </section>
 
-      {/* Tools */}
-      <section className="section bg-surface-lowest">
+      {/* The Problem Section */}
+      <section className="learn-section section-problem">
         <div className="container">
-          <RevealOnScroll className="tools-header">
-            <div className="section-label label-sm">Investment Tools</div>
-            <h2 className="headline-lg">Tools to power your decisions.</h2>
+          <RevealOnScroll>
+            <div className="section-label label-sm">The Problem</div>
+            <h2 className="headline-lg learn-section-title">
+              Indian investors deserve <span className="italic-accent">better</span> than juggling apps.
+            </h2>
           </RevealOnScroll>
-          <div className="grid-4">
-            {TOOLS.map(({ icon, title, desc }, i) => (
-              <RevealOnScroll key={title} delay={i * 0.1}>
-                <div className="card tool-card">
-                  <div className="tool-icon">
-                    <span className="material-icons">{icon}</span>
+
+          <div className="problem-grid">
+            <RevealOnScroll direction="left" delay={0.1} className="problem-text">
+              <p>
+                Today's serious investor is drowning in noise. <strong>Multiple apps. Conflicting advice. Endless DIY research.</strong> Time that should go toward building wealth gets lost in managing complexity.
+              </p>
+              <p>
+                The existing landscape gives you either <strong>discount brokerage with no guidance</strong>, or expensive private wealth management that's still stuck in the last decade.
+              </p>
+              <p>
+                VPW was built to fill the gap — institutional-grade intelligence, AI-powered planning, and a single platform that handles everything.
+              </p>
+            </RevealOnScroll>
+
+            <RevealOnScroll direction="right" delay={0.2}>
+              <ul className="problem-list">
+                {PROBLEM_POINTS.map((point, index) => (
+                  <li key={index} className="problem-list-item">
+                    <span className="problem-list-bullet">—</span>
+                    <span className="body-md">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </RevealOnScroll>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works Section */}
+      <section className="learn-section section-how-it-works">
+        <div className="container">
+          <RevealOnScroll>
+            <div className="section-label label-sm">How VPW Works</div>
+            <h2 className="headline-lg learn-section-title">
+              Three things. <span className="italic-accent">Done right.</span>
+            </h2>
+          </RevealOnScroll>
+
+          <div className="how-steps-grid">
+            {STEPS.map((step, i) => (
+              <RevealOnScroll key={step.number} delay={i * 0.1}>
+                <div className="step-card">
+                  <div className="step-card-hover-border" />
+                  <div className="step-number">{step.number}</div>
+                  <div className="step-icon-wrapper">
+                    <span className="material-icons">{step.icon}</span>
                   </div>
-                  <h3 className="tool-title">{title}</h3>
-                  <p className="tool-desc">{desc}</p>
-                  <a href="https://research.vpwwealth.com" target="_blank" rel="noopener noreferrer" className="btn-ghost">
-                    Open Tool ↗
-                  </a>
+                  <h3 className="step-title">{step.title}</h3>
+                  <p className="step-desc body-sm">{step.desc}</p>
                 </div>
               </RevealOnScroll>
             ))}
@@ -166,47 +323,243 @@ export default function LearnMore() {
         </div>
       </section>
 
-      {/* Glossary */}
-      <section className="section">
+      {/* AI Ecosystem Section */}
+      <section className="learn-section section-ai-ecosystem">
         <div className="container">
-          <div className="grid-2 glossary-layout">
-            <RevealOnScroll direction="left" className="glossary-info">
-              <div className="section-label label-sm">Glossary</div>
-              <h2 className="headline-lg">Master the language of investing.</h2>
-              <p className="body-md glossary-desc">
-                Our comprehensive glossary covers 200+ financial terms — from Alpha to Zero-Cost Collar. Each definition is written in plain English and contextualised for Indian markets.
-              </p>
-              <a href="https://research.vpwwealth.com/glossary" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Open Full Glossary ↗
-              </a>
-            </RevealOnScroll>
-            
-            <RevealOnScroll delay={0.2} direction="right">
-              <div className="glossary-grid">
-                {GLOSSARY_TERMS.map(term => (
-                  <div key={term} className="glossary-item">{term}</div>
+          <RevealOnScroll>
+            <div className="section-label label-sm">AI Intelligence Engine</div>
+            <h2 className="headline-lg learn-section-title">
+              Your <span className="italic-accent">personal</span> financial intelligence system.
+            </h2>
+          </RevealOnScroll>
+
+          <div className="ai-engine-grid">
+            <div className="ai-features-list">
+              {AI_FEATURES.map((feature, i) => (
+                <RevealOnScroll key={feature.title} delay={i * 0.05} className="ai-feature-row">
+                  <div className="ai-feature-icon-box">
+                    <span className="material-icons">{feature.icon}</span>
+                  </div>
+                  <div className="ai-feature-content">
+                    <h4 className="ai-feature-title">{feature.title}</h4>
+                    <p className="ai-feature-desc body-sm">{feature.desc}</p>
+                  </div>
+                </RevealOnScroll>
+              ))}
+            </div>
+
+            <RevealOnScroll direction="right" delay={0.2} className="ai-visual-card">
+              <h3 className="ai-visual-title">Intelligence Capabilities</h3>
+              <div className="ai-chips-container">
+                {AI_CHIPS.map((chip) => (
+                  <span key={chip} className="ai-chip">
+                    {chip}
+                  </span>
                 ))}
               </div>
+              <div className="accent-divider" />
+              <p className="ai-roadmap-note body-sm">
+                VPW's long-term roadmap includes building fully sovereign AI capabilities — an in-house financial intelligence system designed exclusively for the Indian wealth ecosystem.
+              </p>
             </RevealOnScroll>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section" style={{ paddingBottom: 140 }}>
+      {/* Investment Universe Section */}
+      <section className="learn-section section-universe">
         <div className="container">
-          <RevealOnScroll className="cta-banner" direction="up">
-            <div className="cta-content">
-              <h2 className="headline-lg">Access our full Research Portal.</h2>
-              <p className="body-md cta-subtext">
-                Registered clients get access to live fund analytics, portfolio performance attribution, and AI-generated market insights.
+          <RevealOnScroll>
+            <div className="universe-header">
+              <div>
+                <div className="section-label label-sm">Investment Universe</div>
+                <h2 className="headline-lg learn-section-title">
+                  Everything you need. <span className="italic-accent">One platform.</span>
+                </h2>
+              </div>
+              <p className="universe-header-desc body-md">
+                From everyday mutual funds to Specialized Investment Funds and alternative asset access — VPW brings together an investment ecosystem designed for serious wealth builders.
               </p>
             </div>
-            <div className="cta-actions">
-              <a href="https://research.vpwwealth.com" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                Open Research Portal ↗
-              </a>
-              <Link to="/contact" className="btn-ghost">Register as Client</Link>
+          </RevealOnScroll>
+
+          <div className="universe-grid">
+            {UNIVERSE.map((item, i) => (
+              <RevealOnScroll key={item.name} delay={(i % 5) * 0.05}>
+                <div className="universe-card">
+                  <span className="universe-card-icon" role="img" aria-label={item.name}>
+                    {item.icon}
+                  </span>
+                  <div className="universe-card-name">{item.name}</div>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Membership Tiers Section */}
+      <section ref={tiersRef} className="learn-section section-tiers" id="tiers">
+        <div className="container">
+          <RevealOnScroll>
+            <div className="section-label label-sm">Membership Structure</div>
+            <h2 className="headline-lg learn-section-title">
+              Choose your <span className="italic-accent">wealth path.</span>
+            </h2>
+          </RevealOnScroll>
+
+          <div className="tiers-grid">
+            {TIERS.map((tier, i) => (
+              <RevealOnScroll key={tier.id} delay={i * 0.1}>
+                <div className={`tier-card-new ${tier.featured ? 'featured' : ''}`}>
+                  <div className="tier-badge-new">{tier.badge}</div>
+                  <h3 className="tier-name-new">{tier.name}</h3>
+                  <div className="tier-tagline-new">{tier.tagline}</div>
+                  <div className="tier-eligibility-new">{tier.eligibility}</div>
+                  
+                  <ul className="tier-features-list">
+                    {tier.features.map((feat, idx) => (
+                      <li key={idx} className="tier-feature-item">
+                        <span className="tier-feature-bullet">◆</span>
+                        <span className="body-sm">{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="tier-bg-letter">{tier.letter}</div>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Founding Member 250 Section */}
+      <section className="learn-section section-founding">
+        <div className="container">
+          <RevealOnScroll direction="up">
+            <div className="founding-card">
+              <div className="founding-badge">Limited Access — First 250</div>
+              <h2 className="headline-lg founding-title">
+                VPW Founding <span className="italic-accent">Member 250</span>
+              </h2>
+              <p className="founding-subtitle body-md">
+                A once-only founding membership. The first 250 approved members shape VPW from its inception — with exclusive privileges locked in for years ahead.
+              </p>
+
+              <div className="founding-perks-grid">
+                {FOUNDING_PERKS.map((perk, i) => (
+                  <div key={i} className="perk-box">
+                    <div className="perk-value">{perk.value}</div>
+                    <div className="perk-label body-xs">{perk.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <FoundingCounter />
+
+              <div className="founding-action">
+                <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                  Apply for Founding Membership
+                  <span className="material-icons">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
+      {/* Research Portal Section */}
+      <section className="learn-section section-research">
+        <div className="container">
+          <RevealOnScroll>
+            <div className="section-label label-sm">VPW Research</div>
+            <h2 className="headline-lg learn-section-title">
+              Intelligence that <span className="italic-accent">moves</span> with markets.
+            </h2>
+          </RevealOnScroll>
+
+          <div className="research-grid-new">
+            <div className="research-features-list">
+              {RESEARCH_CARDS.map((card, i) => (
+                <RevealOnScroll key={card.title} delay={i * 0.05} className="research-card-row">
+                  <div className="research-card-icon-box">
+                    <span className="material-icons">{card.icon}</span>
+                  </div>
+                  <div className="research-card-content">
+                    <h4 className="research-card-title">{card.title}</h4>
+                    <p className="research-card-desc body-sm">{card.desc}</p>
+                  </div>
+                </RevealOnScroll>
+              ))}
+            </div>
+
+            <div className="research-quote-col">
+              <RevealOnScroll direction="right" delay={0.1} className="research-quote-card">
+                <blockquote className="research-quote-text">
+                  "The terminal for serious Indian wealth — where intelligence meets ambition."
+                </blockquote>
+                <cite className="research-quote-source">— VPW Research Vision</cite>
+              </RevealOnScroll>
+
+              <RevealOnScroll direction="right" delay={0.2} className="inspiration-card">
+                <h4 className="inspiration-title">Built with inspiration from</h4>
+                <ul className="inspiration-list">
+                  {INSPIRED_BY.map((item) => (
+                    <li key={item.name} className="inspiration-item">
+                      <span className="inspiration-name">{item.name}</span>
+                      <span className="inspiration-role body-xs">{item.role}</span>
+                    </li>
+                  ))}
+                </ul>
+              </RevealOnScroll>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section className="learn-section section-vision">
+        <div className="container">
+          <RevealOnScroll direction="up">
+            <div className="section-label label-sm">The Bigger Picture</div>
+            <h2 className="display-md vision-headline">
+              VPW is not just a platform.<br />
+              It is a <span className="italic-accent">wealth intelligence</span> institution in the making.
+            </h2>
+            <p className="body-lg vision-desc">
+              The long-term ambition goes beyond fintech — towards becoming a strategic capital allocator, an AI-driven intelligence network, and an institution that gives Indian investors access to the kind of financial power that was once reserved for the very few.
+            </p>
+          </RevealOnScroll>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="learn-section section-final-cta">
+        <div className="container">
+          <RevealOnScroll direction="up">
+            <div className="final-cta-card">
+              <div className="section-label label-sm">Begin Your Journey</div>
+              <h2 className="headline-lg final-cta-title">
+                Ready to build wealth <span className="italic-accent">intelligently</span>?
+              </h2>
+              <p className="body-md final-cta-desc">
+                Join VPW and experience what it feels like when your wealth finally has a strategy, a system, and an intelligence layer working for it.
+              </p>
+              
+              <div className="final-cta-actions">
+                <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                  Get Started
+                  <span className="material-icons">arrow_forward</span>
+                </a>
+                <a href="#tiers" onClick={handleScrollToTiers} className="btn-ghost">
+                  Explore Plans
+                </a>
+              </div>
+
+              <p className="compliance-footnote body-xs">
+                VPW operates in compliance with SEBI and applicable Indian regulatory frameworks. Investment decisions are subject to market risk. Please read all offer documents carefully.
+              </p>
             </div>
           </RevealOnScroll>
         </div>
