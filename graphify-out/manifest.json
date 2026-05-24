@@ -1,0 +1,62 @@
+{
+  "D:\\VPW Portfolio\\src\\App.jsx": {
+    "mtime": 1779614338.9367437,
+    "hash": "b1dd11d497597153381a5a7330983cf6"
+  },
+  "D:\\VPW Portfolio\\src\\main.jsx": {
+    "mtime": 1778232635.559101,
+    "hash": "dccbc1f280428108a6a2067be6e1ed45"
+  },
+  "D:\\VPW Portfolio\\src\\components\\Footer.jsx": {
+    "mtime": 1779619986.1658828,
+    "hash": "4fc3274bc1497bec429de12df313c840"
+  },
+  "D:\\VPW Portfolio\\src\\components\\Magnetic.jsx": {
+    "mtime": 1778653176.3434074,
+    "hash": "c4c4b4b401af67d9a5eb32ff79ce21f8"
+  },
+  "D:\\VPW Portfolio\\src\\components\\Navbar.jsx": {
+    "mtime": 1779618203.509442,
+    "hash": "8084dad4a9d859a7d88fc0867d611dc0"
+  },
+  "D:\\VPW Portfolio\\src\\components\\RevealOnScroll.jsx": {
+    "mtime": 1778600407.475002,
+    "hash": "26d30dddf25d7c30529516e2d65a59b0"
+  },
+  "D:\\VPW Portfolio\\src\\components\\WhatsAppFloat.jsx": {
+    "mtime": 1778432065.2824104,
+    "hash": "7e80d73b243403bd2d4b8239663b8e86"
+  },
+  "D:\\VPW Portfolio\\src\\components\\background\\BackgroundSystem.jsx": {
+    "mtime": 1778683872.2266934,
+    "hash": "8bc43930c6f9bed2740f1010ea78804c"
+  },
+  "D:\\VPW Portfolio\\src\\components\\ui\\SmoothScroll.jsx": {
+    "mtime": 1778684705.1394703,
+    "hash": "71411be903fe748b695e69db46b58f70"
+  },
+  "D:\\VPW Portfolio\\src\\pages\\About.jsx": {
+    "mtime": 1778683248.8906188,
+    "hash": "84284e896236269688547c069e9ea995"
+  },
+  "D:\\VPW Portfolio\\src\\pages\\ContactUs.jsx": {
+    "mtime": 1779622111.0290697,
+    "hash": "d13f7db70d8d0bf19ca13bebd6a33303"
+  },
+  "D:\\VPW Portfolio\\src\\pages\\Home.jsx": {
+    "mtime": 1779618742.876655,
+    "hash": "3cf82e101447d26e85fb067806023103"
+  },
+  "D:\\VPW Portfolio\\src\\pages\\LearnMore.jsx": {
+    "mtime": 1779618756.7850897,
+    "hash": "340e842b6d425cceec7e486cb6b143f3"
+  },
+  "D:\\VPW Portfolio\\src\\pages\\Methodology.jsx": {
+    "mtime": 1779621579.1853623,
+    "hash": "286430f25996ffa5e01af482e8d44df8"
+  },
+  "D:\\VPW Portfolio\\src\\pages\\ScheduleOfCharges.jsx": {
+    "mtime": 1778658986.015178,
+    "hash": "58ef4026cb415e1311c50383588f3966"
+  }
+}

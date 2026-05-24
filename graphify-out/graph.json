@@ -1,0 +1,1178 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "App.jsx",
+      "source_location": "L1",
+      "id": "app_jsx",
+      "community": 1,
+      "norm_label": "app.jsx"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "App.jsx",
+      "source_location": "L15",
+      "id": "src_app_app",
+      "community": 1,
+      "norm_label": "app()"
+    },
+    {
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "main.jsx",
+      "source_location": "L1",
+      "id": "main_jsx",
+      "community": 1,
+      "norm_label": "main.jsx"
+    },
+    {
+      "label": "Footer.jsx",
+      "file_type": "code",
+      "source_file": "components/Footer.jsx",
+      "source_location": "L1",
+      "id": "components_footer_jsx",
+      "community": 1,
+      "norm_label": "footer.jsx"
+    },
+    {
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "components/Footer.jsx",
+      "source_location": "L4",
+      "id": "components_footer_footer",
+      "community": 1,
+      "norm_label": "footer()"
+    },
+    {
+      "label": "Magnetic.jsx",
+      "file_type": "code",
+      "source_file": "components/Magnetic.jsx",
+      "source_location": "L1",
+      "id": "components_magnetic_jsx",
+      "community": 2,
+      "norm_label": "magnetic.jsx"
+    },
+    {
+      "label": "Magnetic()",
+      "file_type": "code",
+      "source_file": "components/Magnetic.jsx",
+      "source_location": "L4",
+      "id": "components_magnetic_magnetic",
+      "community": 2,
+      "norm_label": "magnetic()"
+    },
+    {
+      "label": "Navbar.jsx",
+      "file_type": "code",
+      "source_file": "components/Navbar.jsx",
+      "source_location": "L1",
+      "id": "components_navbar_jsx",
+      "community": 6,
+      "norm_label": "navbar.jsx"
+    },
+    {
+      "label": "LINKS",
+      "file_type": "code",
+      "source_file": "components/Navbar.jsx",
+      "source_location": "L6",
+      "id": "components_navbar_links",
+      "community": 6,
+      "norm_label": "links"
+    },
+    {
+      "label": "Navbar()",
+      "file_type": "code",
+      "source_file": "components/Navbar.jsx",
+      "source_location": "L16",
+      "id": "components_navbar_navbar",
+      "community": 6,
+      "norm_label": "navbar()"
+    },
+    {
+      "label": "RevealOnScroll.jsx",
+      "file_type": "code",
+      "source_file": "components/RevealOnScroll.jsx",
+      "source_location": "L1",
+      "id": "components_revealonscroll_jsx",
+      "community": 2,
+      "norm_label": "revealonscroll.jsx"
+    },
+    {
+      "label": "RevealOnScroll()",
+      "file_type": "code",
+      "source_file": "components/RevealOnScroll.jsx",
+      "source_location": "L11",
+      "id": "components_revealonscroll_revealonscroll",
+      "community": 2,
+      "norm_label": "revealonscroll()"
+    },
+    {
+      "label": "WhatsAppFloat.jsx",
+      "file_type": "code",
+      "source_file": "components/WhatsAppFloat.jsx",
+      "source_location": "L1",
+      "id": "components_whatsappfloat_jsx",
+      "community": 1,
+      "norm_label": "whatsappfloat.jsx"
+    },
+    {
+      "label": "WhatsAppFloat()",
+      "file_type": "code",
+      "source_file": "components/WhatsAppFloat.jsx",
+      "source_location": "L3",
+      "id": "components_whatsappfloat_whatsappfloat",
+      "community": 1,
+      "norm_label": "whatsappfloat()"
+    },
+    {
+      "label": "BackgroundSystem.jsx",
+      "file_type": "code",
+      "source_file": "components/background/BackgroundSystem.jsx",
+      "source_location": "L1",
+      "id": "components_background_backgroundsystem_jsx",
+      "community": 1,
+      "norm_label": "backgroundsystem.jsx"
+    },
+    {
+      "label": "BackgroundSystem()",
+      "file_type": "code",
+      "source_file": "components/background/BackgroundSystem.jsx",
+      "source_location": "L4",
+      "id": "background_backgroundsystem_backgroundsystem",
+      "community": 1,
+      "norm_label": "backgroundsystem()"
+    },
+    {
+      "label": "SmoothScroll.jsx",
+      "file_type": "code",
+      "source_file": "components/ui/SmoothScroll.jsx",
+      "source_location": "L1",
+      "id": "components_ui_smoothscroll_jsx",
+      "community": 1,
+      "norm_label": "smoothscroll.jsx"
+    },
+    {
+      "label": "SmoothScroll()",
+      "file_type": "code",
+      "source_file": "components/ui/SmoothScroll.jsx",
+      "source_location": "L5",
+      "id": "ui_smoothscroll_smoothscroll",
+      "community": 1,
+      "norm_label": "smoothscroll()"
+    },
+    {
+      "label": "About.jsx",
+      "file_type": "code",
+      "source_file": "pages/About.jsx",
+      "source_location": "L1",
+      "id": "pages_about_jsx",
+      "community": 4,
+      "norm_label": "about.jsx"
+    },
+    {
+      "label": "containerVariants",
+      "file_type": "code",
+      "source_file": "pages/About.jsx",
+      "source_location": "L8",
+      "id": "pages_about_containervariants",
+      "community": 4,
+      "norm_label": "containervariants"
+    },
+    {
+      "label": "itemVariants",
+      "file_type": "code",
+      "source_file": "pages/About.jsx",
+      "source_location": "L19",
+      "id": "pages_about_itemvariants",
+      "community": 4,
+      "norm_label": "itemvariants"
+    },
+    {
+      "label": "BELIEFS",
+      "file_type": "code",
+      "source_file": "pages/About.jsx",
+      "source_location": "L31",
+      "id": "pages_about_beliefs",
+      "community": 4,
+      "norm_label": "beliefs"
+    },
+    {
+      "label": "BUILT_FOR",
+      "file_type": "code",
+      "source_file": "pages/About.jsx",
+      "source_location": "L58",
+      "id": "pages_about_built_for",
+      "community": 4,
+      "norm_label": "built_for"
+    },
+    {
+      "label": "About()",
+      "file_type": "code",
+      "source_file": "pages/About.jsx",
+      "source_location": "L66",
+      "id": "pages_about_about",
+      "community": 4,
+      "norm_label": "about()"
+    },
+    {
+      "label": "ContactUs.jsx",
+      "file_type": "code",
+      "source_file": "pages/ContactUs.jsx",
+      "source_location": "L1",
+      "id": "pages_contactus_jsx",
+      "community": 2,
+      "norm_label": "contactus.jsx"
+    },
+    {
+      "label": "QUICK_ACTIONS",
+      "file_type": "code",
+      "source_file": "pages/ContactUs.jsx",
+      "source_location": "L10",
+      "id": "pages_contactus_quick_actions",
+      "community": 2,
+      "norm_label": "quick_actions"
+    },
+    {
+      "label": "TRUST_POINTS",
+      "file_type": "code",
+      "source_file": "pages/ContactUs.jsx",
+      "source_location": "L47",
+      "id": "pages_contactus_trust_points",
+      "community": 2,
+      "norm_label": "trust_points"
+    },
+    {
+      "label": "ContactUs()",
+      "file_type": "code",
+      "source_file": "pages/ContactUs.jsx",
+      "source_location": "L54",
+      "id": "pages_contactus_contactus",
+      "community": 2,
+      "norm_label": "contactus()"
+    },
+    {
+      "label": "Home.jsx",
+      "file_type": "code",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L1",
+      "id": "pages_home_jsx",
+      "community": 3,
+      "norm_label": "home.jsx"
+    },
+    {
+      "label": "STATS",
+      "file_type": "code",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L10",
+      "id": "pages_home_stats",
+      "community": 3,
+      "norm_label": "stats"
+    },
+    {
+      "label": "SERVICES",
+      "file_type": "code",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L17",
+      "id": "pages_home_services",
+      "community": 3,
+      "norm_label": "services"
+    },
+    {
+      "label": "FAQS",
+      "file_type": "code",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L57",
+      "id": "pages_home_faqs",
+      "community": 3,
+      "norm_label": "faqs"
+    },
+    {
+      "label": "FAQItem()",
+      "file_type": "code",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L63",
+      "id": "pages_home_faqitem",
+      "community": 3,
+      "norm_label": "faqitem()"
+    },
+    {
+      "label": "containerVariants",
+      "file_type": "code",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L92",
+      "id": "pages_home_containervariants",
+      "community": 3,
+      "norm_label": "containervariants"
+    },
+    {
+      "label": "itemVariants",
+      "file_type": "code",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L97",
+      "id": "pages_home_itemvariants",
+      "community": 3,
+      "norm_label": "itemvariants"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L102",
+      "id": "pages_home_home",
+      "community": 3,
+      "norm_label": "home()"
+    },
+    {
+      "label": "LearnMore.jsx",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L1",
+      "id": "pages_learnmore_jsx",
+      "community": 0,
+      "norm_label": "learnmore.jsx"
+    },
+    {
+      "label": "PROBLEM_POINTS",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L9",
+      "id": "pages_learnmore_problem_points",
+      "community": 0,
+      "norm_label": "problem_points"
+    },
+    {
+      "label": "STEPS",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L18",
+      "id": "pages_learnmore_steps",
+      "community": 0,
+      "norm_label": "steps"
+    },
+    {
+      "label": "AI_FEATURES",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L39",
+      "id": "pages_learnmore_ai_features",
+      "community": 0,
+      "norm_label": "ai_features"
+    },
+    {
+      "label": "AI_CHIPS",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L67",
+      "id": "pages_learnmore_ai_chips",
+      "community": 0,
+      "norm_label": "ai_chips"
+    },
+    {
+      "label": "UNIVERSE",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L82",
+      "id": "pages_learnmore_universe",
+      "community": 0,
+      "norm_label": "universe"
+    },
+    {
+      "label": "TIERS",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L95",
+      "id": "pages_learnmore_tiers",
+      "community": 0,
+      "norm_label": "tiers"
+    },
+    {
+      "label": "FOUNDING_PERKS",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L149",
+      "id": "pages_learnmore_founding_perks",
+      "community": 0,
+      "norm_label": "founding_perks"
+    },
+    {
+      "label": "RESEARCH_CARDS",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L157",
+      "id": "pages_learnmore_research_cards",
+      "community": 0,
+      "norm_label": "research_cards"
+    },
+    {
+      "label": "INSPIRED_BY",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L185",
+      "id": "pages_learnmore_inspired_by",
+      "community": 0,
+      "norm_label": "inspired_by"
+    },
+    {
+      "label": "FoundingCounter()",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L192",
+      "id": "pages_learnmore_foundingcounter",
+      "community": 0,
+      "norm_label": "foundingcounter()"
+    },
+    {
+      "label": "LearnMore()",
+      "file_type": "code",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L215",
+      "id": "pages_learnmore_learnmore",
+      "community": 0,
+      "norm_label": "learnmore()"
+    },
+    {
+      "label": "Methodology.jsx",
+      "file_type": "code",
+      "source_file": "pages/Methodology.jsx",
+      "source_location": "L1",
+      "id": "pages_methodology_jsx",
+      "community": 2,
+      "norm_label": "methodology.jsx"
+    },
+    {
+      "label": "PILLARS",
+      "file_type": "code",
+      "source_file": "pages/Methodology.jsx",
+      "source_location": "L9",
+      "id": "pages_methodology_pillars",
+      "community": 2,
+      "norm_label": "pillars"
+    },
+    {
+      "label": "Methodology()",
+      "file_type": "code",
+      "source_file": "pages/Methodology.jsx",
+      "source_location": "L177",
+      "id": "pages_methodology_methodology",
+      "community": 2,
+      "norm_label": "methodology()"
+    },
+    {
+      "label": "ScheduleOfCharges.jsx",
+      "file_type": "code",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L1",
+      "id": "pages_scheduleofcharges_jsx",
+      "community": 5,
+      "norm_label": "scheduleofcharges.jsx"
+    },
+    {
+      "label": "CHARGES_DATA",
+      "file_type": "code",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L4",
+      "id": "pages_scheduleofcharges_charges_data",
+      "community": 5,
+      "norm_label": "charges_data"
+    },
+    {
+      "label": "NOTES",
+      "file_type": "code",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L42",
+      "id": "pages_scheduleofcharges_notes",
+      "community": 5,
+      "norm_label": "notes"
+    },
+    {
+      "label": "HIGHLIGHTS",
+      "file_type": "code",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L50",
+      "id": "pages_scheduleofcharges_highlights",
+      "community": 5,
+      "norm_label": "highlights"
+    },
+    {
+      "label": "ScheduleOfCharges()",
+      "file_type": "code",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L56",
+      "id": "pages_scheduleofcharges_scheduleofcharges",
+      "community": 5,
+      "norm_label": "scheduleofcharges()"
+    }
+  ],
+  "links": [
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "components_ui_smoothscroll_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "ui_smoothscroll_smoothscroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "components_background_backgroundsystem_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "components_navbar_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "components_footer_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "components_whatsappfloat_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "pages_home_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "pages_about_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "pages_methodology_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "pages_scheduleofcharges_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "pages_learnmore_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "pages_contactus_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "App.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "app_jsx",
+      "target": "src_app_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "main.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "main_jsx",
+      "target": "app_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Footer.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_footer_jsx",
+      "target": "components_footer_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Magnetic.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_magnetic_jsx",
+      "target": "components_magnetic_magnetic",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/About.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "pages_about_jsx",
+      "target": "components_magnetic_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ContactUs.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "pages_contactus_jsx",
+      "target": "components_magnetic_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "pages_home_jsx",
+      "target": "components_magnetic_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Methodology.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "pages_methodology_jsx",
+      "target": "components_magnetic_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Navbar.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "components_navbar_jsx",
+      "target": "components_navbar_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Navbar.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "components_navbar_jsx",
+      "target": "components_navbar_navbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/RevealOnScroll.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "components_revealonscroll_jsx",
+      "target": "components_revealonscroll_revealonscroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/About.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "pages_about_jsx",
+      "target": "components_revealonscroll_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ContactUs.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "pages_contactus_jsx",
+      "target": "components_revealonscroll_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "pages_home_jsx",
+      "target": "components_revealonscroll_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "components_revealonscroll_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Methodology.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "pages_methodology_jsx",
+      "target": "components_revealonscroll_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "pages_scheduleofcharges_jsx",
+      "target": "components_revealonscroll_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/WhatsAppFloat.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "components_whatsappfloat_jsx",
+      "target": "components_whatsappfloat_whatsappfloat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/background/BackgroundSystem.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_background_backgroundsystem_jsx",
+      "target": "background_backgroundsystem_backgroundsystem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/ui/SmoothScroll.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_ui_smoothscroll_jsx",
+      "target": "ui_smoothscroll_smoothscroll",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/About.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "pages_about_jsx",
+      "target": "pages_about_containervariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/About.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "pages_about_jsx",
+      "target": "pages_about_itemvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/About.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "pages_about_jsx",
+      "target": "pages_about_beliefs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/About.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "pages_about_jsx",
+      "target": "pages_about_built_for",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/About.jsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "pages_about_jsx",
+      "target": "pages_about_about",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ContactUs.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "pages_contactus_jsx",
+      "target": "pages_contactus_quick_actions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ContactUs.jsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "pages_contactus_jsx",
+      "target": "pages_contactus_trust_points",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ContactUs.jsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "pages_contactus_jsx",
+      "target": "pages_contactus_contactus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "pages_home_jsx",
+      "target": "pages_home_stats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "pages_home_jsx",
+      "target": "pages_home_services",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "pages_home_jsx",
+      "target": "pages_home_faqs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "pages_home_jsx",
+      "target": "pages_home_faqitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "pages_home_jsx",
+      "target": "pages_home_containervariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "pages_home_jsx",
+      "target": "pages_home_itemvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Home.jsx",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "pages_home_jsx",
+      "target": "pages_home_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_problem_points",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_ai_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_ai_chips",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_universe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_tiers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_founding_perks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_research_cards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_inspired_by",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L192",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_foundingcounter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/LearnMore.jsx",
+      "source_location": "L215",
+      "weight": 1.0,
+      "source": "pages_learnmore_jsx",
+      "target": "pages_learnmore_learnmore",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Methodology.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "pages_methodology_jsx",
+      "target": "pages_methodology_pillars",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/Methodology.jsx",
+      "source_location": "L177",
+      "weight": 1.0,
+      "source": "pages_methodology_jsx",
+      "target": "pages_methodology_methodology",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "pages_scheduleofcharges_jsx",
+      "target": "pages_scheduleofcharges_charges_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "pages_scheduleofcharges_jsx",
+      "target": "pages_scheduleofcharges_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "pages_scheduleofcharges_jsx",
+      "target": "pages_scheduleofcharges_highlights",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/ScheduleOfCharges.jsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "pages_scheduleofcharges_jsx",
+      "target": "pages_scheduleofcharges_scheduleofcharges",
+      "confidence_score": 1.0
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "ba30b13497f5704369631ecc61ca2f6377e2d5c6"
+}
